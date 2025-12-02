@@ -1,0 +1,197 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pricingPlans = [
+  {
+    name: 'Starter',
+    description: 'Perfect for small projects and MVPs',
+    price: 'Custom',
+    features: [
+      'Single page applications',
+      'Basic responsive design',
+      'Standard deployment',
+      '30-day support included',
+      'Source code ownership',
+    ],
+    highlighted: false,
+  },
+  {
+    name: 'Professional',
+    description: 'For growing businesses with bigger needs',
+    price: 'Custom',
+    features: [
+      'Multi-page applications',
+      'Custom UI/UX design',
+      'Database integration',
+      'API development',
+      'Authentication system',
+      '90-day support included',
+      'Performance optimization',
+    ],
+    highlighted: true,
+  },
+  {
+    name: 'Enterprise',
+    description: 'Full-scale solutions for established companies',
+    price: 'Custom',
+    features: [
+      'Complex applications',
+      'Advanced integrations',
+      'Scalable architecture',
+      'Security hardening',
+      'Load testing',
+      'Priority 24/7 support',
+      'Dedicated account manager',
+      'Custom SLA',
+    ],
+    highlighted: false,
+  },
+];
+
+const addons = [
+  { name: 'Ongoing Maintenance', description: 'Monthly retainer for updates and bug fixes' },
+  { name: 'SEO Package', description: 'Search engine optimization and analytics setup' },
+  { name: 'Mobile App', description: 'Companion mobile app for your web application' },
+  { name: 'Training Sessions', description: 'Team training for your new application' },
+];
+---
+
+<Layout title="Pricing - Founders">
+  <!-- Hero Section -->
+  <section class="py-20 relative overflow-hidden">
+    <div class="absolute inset-0 gradient-bg-subtle opacity-5 dark:opacity-10"></div>
+    <div class="container mx-auto px-4 relative">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 gradient-text">
+          Simple, Transparent Pricing
+        </h1>
+        <p class="text-xl" style="color: var(--text-secondary);">
+          Every project is unique. We provide custom quotes based on your specific requirements. No hidden fees, no surprises.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Cards -->
+  <section class="py-20" style="background-color: var(--bg-secondary);">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-8">
+          {pricingPlans.map((plan) => (
+            <div class="p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1 relative gradient-bg text-white">
+              {plan.highlighted && (
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-white text-primary-600 text-sm font-semibold rounded-full shadow-lg">
+                  Most Popular
+                </div>
+              )}
+              <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold mb-2 text-white">
+                  {plan.name}
+                </h3>
+                <p class="mb-4 text-blue-100">
+                  {plan.description}
+                </p>
+                <div class="text-4xl font-bold text-white">
+                  {plan.price}
+                </div>
+                <p class="text-sm text-blue-100">
+                  Based on project scope
+                </p>
+              </div>
+              
+              <ul class="space-y-3 mb-8">
+                {plan.features.map((feature) => (
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 mt-0.5 flex-shrink-0 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class="text-blue-50">
+                      {feature}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <a 
+                href="/contact" 
+                class="block w-full text-center py-3 rounded-xl font-semibold transition-colors bg-white text-primary-600 hover:bg-blue-50"
+              >
+                Get a Quote
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Add-ons -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4" style="color: var(--text-primary);">
+            Optional Add-ons
+          </h2>
+          <p class="text-xl" style="color: var(--text-secondary);">
+            Enhance your project with additional services
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          {addons.map((addon) => (
+            <div class="p-6 rounded-xl border transition-all duration-300 hover:border-primary-300 dark:hover:border-primary-600" style="background-color: var(--card-bg); border-color: var(--border-color);">
+              <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">{addon.name}</h3>
+              <p style="color: var(--text-secondary);">{addon.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20" style="background-color: var(--bg-secondary);">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4" style="color: var(--text-primary);">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <div class="space-y-6">
+          {[
+            { q: 'How do you determine pricing?', a: 'We base our quotes on project complexity, timeline, and required features. After our initial consultation, we provide a detailed proposal with transparent pricing.' },
+            { q: 'What payment terms do you offer?', a: 'Typically, we work with a 50% deposit to start, with the remainder due upon completion. For larger projects, we can arrange milestone-based payments.' },
+            { q: 'Do you offer ongoing support?', a: 'Yes! All plans include initial support. We also offer monthly maintenance packages for long-term partnerships.' },
+            { q: 'How long does a typical project take?', a: 'Timeline varies based on scope. A simple website might take 2-4 weeks, while a complex application could be 3-6 months. We provide accurate estimates during planning.' },
+          ].map((faq) => (
+            <div class="p-6 rounded-xl" style="background-color: var(--card-bg); box-shadow: var(--card-shadow);">
+              <h3 class="text-lg font-bold mb-2" style="color: var(--text-primary);">{faq.q}</h3>
+              <p style="color: var(--text-secondary);">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 relative overflow-hidden">
+    <div class="absolute inset-0 gradient-bg"></div>
+    <div class="container mx-auto px-4 relative">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
+          Ready to Get Started?
+        </h2>
+        <p class="text-xl mb-10 text-blue-100">
+          Let's discuss your project and provide a custom quote tailored to your needs.
+        </p>
+        <a href="/contact" class="inline-block bg-white text-primary-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-50 transition-colors shadow-lg">
+          Request a Quote
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

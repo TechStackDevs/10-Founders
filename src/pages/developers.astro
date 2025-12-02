@@ -1,0 +1,173 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const developers = [
+  {
+    name: 'Developer Name',
+    role: 'Full Stack Developer',
+    bio: 'Passionate about building scalable web applications with modern technologies. Specializes in React, Node.js, and cloud architecture.',
+    skills: ['React', 'Node.js', 'TypeScript', 'AWS'],
+    image: null, // Add image path here, e.g., '/images/team/dev1.jpg'
+  },
+  {
+    name: 'Developer Name',
+    role: 'Mobile Developer',
+    bio: 'Expert in cross-platform mobile development. Creates beautiful, performant apps for iOS and Android using React Native and Flutter.',
+    skills: ['React Native', 'Flutter', 'Swift', 'Kotlin'],
+    image: null,
+  },
+  {
+    name: 'Developer Name',
+    role: 'Backend Engineer',
+    bio: 'Database architect and API specialist. Builds robust, secure backends that scale with your business needs.',
+    skills: ['Python', 'PostgreSQL', 'Docker', 'GraphQL'],
+    image: null,
+  },
+  {
+    name: 'Developer Name',
+    role: 'UI/UX Designer & Developer',
+    bio: 'Bridges design and development. Creates intuitive interfaces backed by clean, maintainable code.',
+    skills: ['Figma', 'CSS', 'Animation', 'Accessibility'],
+    image: null,
+  },
+  {
+    name: 'Developer Name',
+    role: 'DevOps Engineer',
+    bio: 'Infrastructure and automation specialist. Ensures smooth deployments and reliable systems at scale.',
+    skills: ['Kubernetes', 'Terraform', 'CI/CD', 'Linux'],
+    image: null,
+  },
+  {
+    name: 'Developer Name',
+    role: 'Frontend Developer',
+    bio: 'Crafts pixel-perfect interfaces with attention to detail. Expert in modern CSS and JavaScript frameworks.',
+    skills: ['Vue.js', 'Tailwind', 'JavaScript', 'Sass'],
+    image: null,
+  },
+  {
+    name: 'Developer Name',
+    role: 'Data Engineer',
+    bio: 'Transforms raw data into actionable insights. Builds data pipelines and analytics solutions.',
+    skills: ['SQL', 'Spark', 'Airflow', 'BigQuery'],
+    image: null,
+  },
+  {
+    name: 'Developer Name',
+    role: 'Security Specialist',
+    bio: 'Protects applications and data from threats. Implements security best practices across the stack.',
+    skills: ['Penetration Testing', 'OWASP', 'Encryption', 'Compliance'],
+    image: null,
+  },
+  {
+    name: 'Developer Name',
+    role: 'AI/ML Engineer',
+    bio: 'Builds intelligent systems and integrates AI capabilities into applications.',
+    skills: ['Python', 'TensorFlow', 'OpenAI', 'LangChain'],
+    image: null,
+  },
+  {
+    name: 'Developer Name',
+    role: 'QA Engineer',
+    bio: 'Ensures quality through comprehensive testing strategies. Automates testing for faster releases.',
+    skills: ['Selenium', 'Cypress', 'Jest', 'Test Planning'],
+    image: null,
+  },
+];
+---
+
+<Layout title="Our Developers - Founders">
+  <!-- Hero Section -->
+  <section class="py-20 relative overflow-hidden">
+    <div class="absolute inset-0 gradient-bg-subtle opacity-5 dark:opacity-10"></div>
+    <div class="container mx-auto px-4 relative">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 gradient-text">
+          Meet Our Team
+        </h1>
+        <p class="text-xl" style="color: var(--text-secondary);">
+          Experienced developers ready to bring your vision to life. Every project gets the expertise it deserves.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Grid -->
+  <section class="py-20" style="background-color: var(--bg-secondary);">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8">
+          {developers.map((dev, index) => (
+            <div class="p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--card-bg); box-shadow: var(--card-shadow);">
+              <div class="flex flex-col sm:flex-row items-start gap-6">
+                <!-- Photo placeholder -->
+                <div class="w-28 h-28 rounded-2xl overflow-hidden flex-shrink-0 border-2 border-primary-200 dark:border-primary-800">
+                  {dev.image ? (
+                    <img src={dev.image} alt={dev.name} class="w-full h-full object-cover" />
+                  ) : (
+                    <div class="w-full h-full gradient-bg flex items-center justify-center">
+                      <span class="text-white text-sm font-medium">Photo</span>
+                    </div>
+                  )}
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold mb-1" style="color: var(--text-primary);">{dev.name}</h3>
+                  <p class="text-primary-500 font-medium mb-3">{dev.role}</p>
+                  <p class="mb-4" style="color: var(--text-secondary);">{dev.bio}</p>
+                  <div class="flex flex-wrap gap-2">
+                    {dev.skills.map((skill) => (
+                      <span class="px-3 py-1 text-sm rounded-full bg-primary-100 text-primary-700 dark:bg-primary-900/50 dark:text-primary-300">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Stack -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4" style="color: var(--text-primary);">
+            Our Technology Stack
+          </h2>
+          <p class="text-xl max-w-2xl mx-auto" style="color: var(--text-secondary);">
+            We use modern, battle-tested technologies to build reliable solutions
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {['React', 'Next.js', 'Node.js', 'TypeScript', 'Python', 'PostgreSQL', 'AWS', 'Docker', 'React Native', 'Flutter', 'Figma', 'Git'].map((tech) => (
+            <div class="p-6 rounded-xl text-center transition-all duration-300 hover:-translate-y-1" style="background-color: var(--bg-secondary);">
+              <span class="font-semibold" style="color: var(--text-primary);">{tech}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join Us CTA -->
+  <section class="py-20 relative overflow-hidden">
+    <div class="absolute inset-0 gradient-bg"></div>
+    <div class="container mx-auto px-4 relative">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
+          Want to Join Our Team?
+        </h2>
+        <p class="text-xl mb-10 text-blue-100">
+          We're always looking for talented developers who share our passion for building great software.
+        </p>
+        <a href="/contact" class="inline-block bg-white text-primary-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-50 transition-colors shadow-lg">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

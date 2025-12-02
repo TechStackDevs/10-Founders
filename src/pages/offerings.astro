@@ -1,0 +1,208 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const offerings = [
+  {
+    title: 'Custom Web Applications',
+    description: 'Full-featured web applications built from the ground up. From dashboards to SaaS platforms, we handle the entire development lifecycle.',
+    features: [
+      'React/Next.js frontend development',
+      'Node.js/Python backend APIs',
+      'Database design & optimization',
+      'Cloud deployment (AWS, Vercel, etc.)',
+      'Authentication & security',
+    ],
+  },
+  {
+    title: 'Mobile App Development',
+    description: 'Native and cross-platform mobile applications that deliver exceptional user experiences on iOS and Android.',
+    features: [
+      'React Native development',
+      'Flutter applications',
+      'App Store optimization',
+      'Push notifications',
+      'Offline-first architecture',
+    ],
+  },
+  {
+    title: 'Marketing Websites',
+    description: 'High-converting landing pages and marketing sites that load fast and rank well in search engines.',
+    features: [
+      'Modern design & UX',
+      'SEO optimization',
+      'Performance tuning',
+      'Analytics integration',
+      'CMS integration',
+    ],
+  },
+  {
+    title: 'E-Commerce Solutions',
+    description: 'Online stores and marketplaces that drive sales. Custom or platform-based solutions tailored to your needs.',
+    features: [
+      'Shopify/WooCommerce setup',
+      'Custom e-commerce builds',
+      'Payment integration',
+      'Inventory management',
+      'Order fulfillment systems',
+    ],
+  },
+  {
+    title: 'API Development',
+    description: 'Robust, scalable APIs that power your applications. RESTful or GraphQL, designed for performance.',
+    features: [
+      'REST API design',
+      'GraphQL implementations',
+      'Third-party integrations',
+      'API documentation',
+      'Rate limiting & security',
+    ],
+  },
+  {
+    title: 'Maintenance & Support',
+    description: 'Ongoing support to keep your applications running smoothly. Bug fixes, updates, and feature additions.',
+    features: [
+      '24/7 monitoring',
+      'Bug fixes & patches',
+      'Performance optimization',
+      'Security updates',
+      'Feature enhancements',
+    ],
+  },
+  {
+    title: 'SEO Services',
+    description: 'Boost your online visibility and drive organic traffic. We optimize your site to rank higher in search results.',
+    features: [
+      'Keyword research & strategy',
+      'On-page SEO optimization',
+      'Technical SEO audits',
+      'Content optimization',
+      'Analytics & reporting',
+    ],
+  },
+  {
+    title: 'AI Implementation & Automation',
+    description: 'Integrate AI capabilities into your workflows. Automate repetitive tasks and unlock new efficiencies with intelligent systems.',
+    features: [
+      'Custom AI integrations',
+      'Workflow automation',
+      'Chatbot development',
+      'Document processing',
+      'Predictive analytics',
+    ],
+  },
+  {
+    title: 'AI Training & Consulting',
+    description: 'Empower your team to leverage AI effectively. We provide hands-on training and strategic consulting for AI adoption.',
+    features: [
+      'Team AI workshops',
+      'Tool selection guidance',
+      'Best practices training',
+      'AI strategy development',
+      'Ongoing advisory support',
+    ],
+  },
+];
+---
+
+<Layout title="Our Offerings - Founders">
+  <!-- Hero Section -->
+  <section class="py-20 relative overflow-hidden">
+    <div class="absolute inset-0 gradient-bg-subtle opacity-5 dark:opacity-10"></div>
+    <div class="container mx-auto px-4 relative">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 gradient-text">
+          What We Offer
+        </h1>
+        <p class="text-xl" style="color: var(--text-secondary);">
+          Comprehensive development services to bring your ideas to life. From concept to deployment and beyond.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offerings Grid -->
+  <section class="py-20" style="background-color: var(--bg-secondary);">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {offerings.map((offering) => (
+            <div class="p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1 gradient-bg text-white">
+              <h3 class="text-2xl font-bold mb-4 text-white">
+                {offering.title}
+              </h3>
+              <p class="mb-6 text-blue-100">
+                {offering.description}
+              </p>
+              <ul class="space-y-2">
+                {offering.features.map((feature) => (
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 mt-0.5 flex-shrink-0 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class="text-blue-50">
+                      {feature}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4" style="color: var(--text-primary);">
+            Our Process
+          </h2>
+          <p class="text-xl max-w-2xl mx-auto" style="color: var(--text-secondary);">
+            A proven approach to delivering successful projects
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-8">
+          {[
+            { step: '01', title: 'Discovery', desc: 'We learn about your business, goals, and requirements' },
+            { step: '02', title: 'Planning', desc: 'Define scope, timeline, and technical architecture' },
+            { step: '03', title: 'Development', desc: 'Build with weekly demos and continuous feedback' },
+            { step: '04', title: 'Launch', desc: 'Deploy, test, and provide ongoing support' },
+          ].map((item) => (
+            <div class="text-center">
+              <div class="text-6xl font-bold gradient-text mb-4">{item.step}</div>
+              <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">{item.title}</h3>
+              <p style="color: var(--text-secondary);">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 relative overflow-hidden">
+    <div class="absolute inset-0 gradient-bg"></div>
+    <div class="container mx-auto px-4 relative">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
+          Let's Build Together
+        </h2>
+        <p class="text-xl mb-10 text-blue-100">
+          Ready to start your project? Let's discuss how we can help.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="inline-block bg-white text-primary-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-50 transition-colors shadow-lg">
+            Contact Us
+          </a>
+          <a href="/pricing" class="inline-block border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 transition-colors">
+            View Pricing
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
