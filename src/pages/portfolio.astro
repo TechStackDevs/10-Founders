@@ -1,0 +1,311 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const projects = [
+  {
+    title: 'FinFlow Dashboard',
+    category: 'Web Application',
+    description: 'A comprehensive financial analytics platform for tracking investments, expenses, and portfolio performance in real-time.',
+    tags: ['React', 'Node.js', 'PostgreSQL', 'Chart.js'],
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+    color: 'from-blue-600 to-cyan-500',
+  },
+  {
+    title: 'MealMate',
+    category: 'Mobile App',
+    description: 'AI-powered meal planning and grocery shopping app that helps users eat healthier while reducing food waste.',
+    tags: ['React Native', 'Firebase', 'OpenAI', 'Stripe'],
+    image: 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&h=600&fit=crop',
+    color: 'from-emerald-500 to-teal-600',
+  },
+  {
+    title: 'Artisan Collective',
+    category: 'E-Commerce',
+    description: 'A boutique marketplace connecting local artisans with customers seeking unique, handcrafted goods.',
+    tags: ['Next.js', 'Shopify API', 'Tailwind', 'Algolia'],
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
+    color: 'from-amber-500 to-orange-600',
+  },
+  {
+    title: 'CloudSync Pro',
+    category: 'SaaS Platform',
+    description: 'Enterprise file synchronization and collaboration tool with advanced security features and team management.',
+    tags: ['Vue.js', 'Go', 'AWS', 'Redis'],
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop',
+    color: 'from-violet-600 to-purple-600',
+  },
+  {
+    title: 'GreenPath Logistics',
+    category: 'Web Application',
+    description: 'Carbon-neutral delivery route optimization system helping logistics companies reduce their environmental impact.',
+    tags: ['React', 'Python', 'TensorFlow', 'Maps API'],
+    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=600&fit=crop',
+    color: 'from-green-500 to-emerald-600',
+  },
+  {
+    title: 'EventHorizon',
+    category: 'Mobile App',
+    description: 'Virtual and hybrid event management platform with interactive features for attendee engagement.',
+    tags: ['Flutter', 'Node.js', 'WebRTC', 'Socket.io'],
+    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop',
+    color: 'from-pink-500 to-rose-600',
+  },
+];
+
+const testimonials = [
+  {
+    quote: "Founders transformed our vision into a product that exceeded our expectations. Their attention to detail is remarkable.",
+    author: "Sarah Chen",
+    role: "CEO, FinFlow",
+    avatar: "SC",
+  },
+  {
+    quote: "Working with Founders was a game-changer. They delivered on time, on budget, and the quality speaks for itself.",
+    author: "Marcus Johnson",
+    role: "Founder, MealMate",
+    avatar: "MJ",
+  },
+  {
+    quote: "The team's technical expertise and creative problem-solving made our complex project feel effortless.",
+    author: "Emily Rodriguez",
+    role: "CTO, CloudSync",
+    avatar: "ER",
+  },
+];
+---
+
+<Layout title="Portfolio - Founders">
+  <!-- Hero Section -->
+  <section class="py-20 relative overflow-hidden">
+    <div class="absolute inset-0 gradient-bg-subtle opacity-5 dark:opacity-10"></div>
+    
+    <!-- Decorative elements -->
+    <div class="absolute top-20 left-10 w-72 h-72 bg-primary-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-10 right-10 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl"></div>
+    
+    <div class="container mx-auto px-4 relative">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 gradient-text">
+          Portfolio
+        </h1>
+        <p class="text-xl md:text-2xl max-w-2xl mx-auto" style="color: var(--text-secondary);">
+          A showcase of the digital products we've built for clients who dared to dream big.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="py-16" style="background-color: var(--bg-secondary);">
+    <div class="container mx-auto px-4">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <div 
+              class="group rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2"
+              style={`background-color: var(--card-bg); box-shadow: var(--card-shadow); animation: fadeInUp 0.6s ease-out ${index * 0.1}s backwards;`}
+            >
+              <!-- Project Image -->
+              <div class="relative h-56 overflow-hidden">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div class={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-0 group-hover:opacity-70 transition-opacity duration-300`}></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span class="px-6 py-3 bg-white text-gray-900 rounded-full font-semibold text-sm shadow-lg">
+                    View Details
+                  </span>
+                </div>
+                <!-- Category Badge -->
+                <div class="absolute top-4 left-4">
+                  <span class={`px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${project.color} text-white`}>
+                    {project.category}
+                  </span>
+                </div>
+              </div>
+              
+              <!-- Project Info -->
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">
+                  {project.title}
+                </h3>
+                <p class="text-sm mb-4 line-clamp-2" style="color: var(--text-secondary);">
+                  {project.description}
+                </p>
+                <!-- Tags -->
+                <div class="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span 
+                      class="px-2 py-1 rounded-md text-xs font-medium"
+                      style="background-color: var(--bg-secondary); color: var(--text-muted);"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="text-5xl md:text-6xl font-bold gradient-text mb-2">50+</div>
+            <div class="text-lg font-medium" style="color: var(--text-secondary);">Projects Completed</div>
+          </div>
+          <div class="text-center">
+            <div class="text-5xl md:text-6xl font-bold gradient-text mb-2">35+</div>
+            <div class="text-lg font-medium" style="color: var(--text-secondary);">Happy Clients</div>
+          </div>
+          <div class="text-center">
+            <div class="text-5xl md:text-6xl font-bold gradient-text mb-2">5+</div>
+            <div class="text-lg font-medium" style="color: var(--text-secondary);">Years Experience</div>
+          </div>
+          <div class="text-center">
+            <div class="text-5xl md:text-6xl font-bold gradient-text mb-2">12</div>
+            <div class="text-lg font-medium" style="color: var(--text-secondary);">Industries Served</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20" style="background-color: var(--bg-secondary);">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4" style="color: var(--text-primary);">
+            Client Stories
+          </h2>
+          <p class="text-xl max-w-2xl mx-auto" style="color: var(--text-secondary);">
+            Don't just take our word for it — hear from the people we've worked with
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <div 
+              class="p-8 rounded-2xl relative"
+              style={`background-color: var(--card-bg); box-shadow: var(--card-shadow); animation: fadeInUp 0.6s ease-out ${index * 0.15}s backwards;`}
+            >
+              <!-- Quote icon -->
+              <div class="absolute -top-4 left-8">
+                <div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center">
+                  <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                  </svg>
+                </div>
+              </div>
+              
+              <p class="text-lg mb-6 mt-4 italic" style="color: var(--text-secondary);">
+                "{testimonial.quote}"
+              </p>
+              
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-white font-bold">
+                  {testimonial.avatar}
+                </div>
+                <div>
+                  <div class="font-semibold" style="color: var(--text-primary);">{testimonial.author}</div>
+                  <div class="text-sm" style="color: var(--text-muted);">{testimonial.role}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technologies Section -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4" style="color: var(--text-primary);">
+            Technologies We Use
+          </h2>
+          <p class="text-xl max-w-2xl mx-auto" style="color: var(--text-secondary);">
+            Modern tools and frameworks to build robust, scalable solutions
+          </p>
+        </div>
+
+        <div class="grid grid-cols-3 md:grid-cols-6 gap-8">
+          {[
+            { name: 'React', icon: '⚛️' },
+            { name: 'Node.js', icon: '🟢' },
+            { name: 'Python', icon: '🐍' },
+            { name: 'Flutter', icon: '💙' },
+            { name: 'AWS', icon: '☁️' },
+            { name: 'PostgreSQL', icon: '🐘' },
+            { name: 'Next.js', icon: '▲' },
+            { name: 'TypeScript', icon: '📘' },
+            { name: 'Firebase', icon: '🔥' },
+            { name: 'Docker', icon: '🐳' },
+            { name: 'GraphQL', icon: '◆' },
+            { name: 'Tailwind', icon: '🎨' },
+          ].map((tech) => (
+            <div class="flex flex-col items-center gap-2 p-4 rounded-xl transition-all duration-300 hover:scale-110 hover:shadow-lg" style="background-color: var(--bg-secondary);">
+              <span class="text-3xl">{tech.icon}</span>
+              <span class="text-sm font-medium" style="color: var(--text-secondary);">{tech.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0 gradient-bg"></div>
+    <div class="container mx-auto px-4 relative">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
+          Ready to Create Something Amazing?
+        </h2>
+        <p class="text-xl mb-10 text-blue-100">
+          Let's turn your vision into the next project in our portfolio.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="inline-block bg-white text-primary-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-50 transition-colors shadow-lg">
+            Start Your Project
+          </a>
+          <a href="/offerings" class="inline-block border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 transition-colors">
+            View Our Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
+
