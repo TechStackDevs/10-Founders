@@ -29,12 +29,40 @@ A modern static website for our tech business, showcasing our services for build
 | `npm run build`           | Build your production site to `./dist/`          |
 | `npm run preview`         | Preview your build locally, before deploying     |
 
+## 👤 Adding Your Developer Profile
+
+### Step 1: Add Your Photo
+1. Place your photo in: `public/images/team/`
+2. Use a simple filename like `yourname.jpg` (no spaces)
+3. Recommended: Square image, 400x400px or larger
+
+### Step 2: Update Your Profile
+1. Open `src/pages/developers.astro`
+2. Find your entry in the `developers` array (or add a new one)
+3. Update the following fields:
+
+```javascript
+{
+  name: 'Your Name',
+  role: 'Your Role',
+  bio: 'A short bio about yourself and your expertise.',
+  skills: ['Skill 1', 'Skill 2', 'Skill 3', 'Skill 4'],
+  image: '/images/team/yourname.jpg',
+},
+```
+
+### Image Path Format
+- Must start with `/images/team/`
+- Must match your filename exactly (case-sensitive)
+- Include the file extension (`.jpg`, `.png`, etc.)
+
+---
+
 ## 🎯 Future Enhancements
 
 - Add React components for interactive features
 - Integrate backend API routes
 - Add contact form functionality
-- Implement blog/portfolio section
 
 ## 📝 Notes
 
