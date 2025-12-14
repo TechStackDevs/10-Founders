@@ -6,71 +6,111 @@ const developers = [
     name: 'Lydia Bandy',
     role: 'Backend Engineer',
     bio: 'Database architect and API specialist. Builds robust, secure backends that scale with your business needs.',
-    skills: ['Python', 'PostgreSQL', 'Docker', 'GraphQL'],
-    image: null,
+    links: [
+      { title: 'Portfolio', url: '' },
+      { title: 'GitHub', url: '' },
+      { title: 'LinkedIn', url: 'https://www.linkedin.com/in/lydia-bandy/' },
+    ],
+    image: '/images/team/Lydia.jpg',
   },
   {
     name: 'Glenn Haertlin',
     role: 'UI/UX Designer & Developer',
     bio: 'Bridges design and development. Creates intuitive interfaces backed by clean, maintainable code.',
-    skills: ['Figma', 'CSS', 'Animation', 'Accessibility'],
-    image: null,
+    links: [
+      { title: 'Portfolio', url: '' },
+      { title: 'GitHub', url: '' },
+      { title: 'LinkedIn', url: 'https://www.linkedin.com/in/htack210/' },
+    ],
+    image: '/images/team/Glenn.jpg',
   },
   {
     name: 'Braden Kartchner',
     role: 'DevOps Engineer',
     bio: 'Infrastructure and automation specialist. Ensures smooth deployments and reliable systems at scale.',
-    skills: ['Kubernetes', 'Terraform', 'CI/CD', 'Linux'],
-    image: null,
+    links: [
+      { title: 'Portfolio', url: '' },
+      { title: 'GitHub', url: '' },
+      { title: 'LinkedIn', url: 'https://www.linkedin.com/in/braden-kartchner-53b190237/' },
+    ],
+    image: '/images/team/Braden.jpg',
   },
   {
     name: 'Rodrigo Maceno',
     role: 'Frontend Developer',
     bio: 'Crafts pixel-perfect interfaces with attention to detail. Expert in modern CSS and JavaScript frameworks.',
-    skills: ['Vue.js', 'Tailwind', 'JavaScript', 'Sass'],
-    image: null,
+    links: [
+      { title: 'Portfolio', url: '' },
+      { title: 'GitHub', url: '' },
+      { title: 'LinkedIn', url: 'https://www.linkedin.com/in/rodrigomaceno/' },
+    ],
+    image: '/images/team/Rodrigo.jpg',
   },
   {
     name: 'Alyssa Miller',
     role: 'Data Engineer',
     bio: 'Transforms raw data into actionable insights. Builds data pipelines and analytics solutions.',
-    skills: ['SQL', 'Spark', 'Airflow', 'BigQuery'],
-    image: null,
+    links: [
+      { title: 'Portfolio', url: '' },
+      { title: 'GitHub', url: '' },
+      { title: 'LinkedIn', url: 'https://www.linkedin.com/in/alyssa-dannielle/' },
+    ],
+    image: '/images/team/Alyssa.jpg',
   },
   {
     name: 'Kai Pannu',
     role: 'Full Stack Developer',
     bio: 'Experienced Project Manager with a demonstrated history of working in the design industry. Skilled in design, planning and problem-solving within several environments such as, MS Office, JavaScript, Revit, AutoCAD, UX/UI, Web Design, Software as a Service (SaaS), and Adobe Photoshop. Strong product and project management professional with a Master of Architecture from Portland State University.',
-    skills: ['React Native', 'Flutter', 'Swift', 'Kotlin'],
+    links: [
+      { title: 'Portfolio', url: '' },
+      { title: 'GitHub', url: '' },
+      { title: 'LinkedIn', url: 'https://www.linkedin.com/in/kai-pannu/' },
+    ],
     image: '/images/team/Kai.jpg',
   },
   {
     name: 'John Schlautman',
     role: 'Full Stack Developer',
     bio: 'Passionate about building web and mobile applications with modern technologies. Specializes in gamification, most notably for puzzle games.',
-    skills: ['React', 'Node.js', 'TypeScript', 'JavaScript', 'Python', 'PostgreSQL', 'Docker', 'AWS', 'Android' ],
-    image: '/images/team/John.jpg',// Add image path here, e.g., '/images/team/dev1.jpg'
+    links: [
+      { title: 'Colors Game', url: 'https://colors-game-teal.vercel.app/' },
+      { title: 'GitHub', url: 'https://github.com/schlajo' },
+      { title: 'LinkedIn', url: 'https://www.linkedin.com/in/johnschlautman/' },
+    ],
+    image: '/images/team/John.jpg',
   },
   {
     name: 'Melissa Usher',
     role: 'Security Specialist',
     bio: 'Protects applications and data from threats. Implements security best practices across the stack.',
-    skills: ['Penetration Testing', 'OWASP', 'Encryption', 'Compliance'],
+    links: [
+      { title: 'Portfolio', url: '' },
+      { title: 'GitHub', url: '' },
+      { title: 'LinkedIn', url: 'https://www.linkedin.com/in/melissa-usher/' },
+    ],
     image: '/images/team/Melissa.jpg',
   },
   {
     name: 'Ki Wedemeyer',
     role: 'AI/ML Engineer',
     bio: 'Builds intelligent systems and integrates AI capabilities into applications.',
-    skills: ['Python', 'TensorFlow', 'OpenAI', 'LangChain'],
-    image: null,
+    links: [
+      { title: 'Portfolio', url: '' },
+      { title: 'GitHub', url: '' },
+      { title: 'LinkedIn', url: 'https://www.linkedin.com/in/kiwedemeyer/' },
+    ],
+    image: '/images/team/Ki.jpg',
   },
   {
     name: 'Katrina Wright',
     role: 'QA Engineer',
     bio: 'Ensures quality through comprehensive testing strategies. Automates testing for faster releases.',
-    skills: ['Selenium', 'Cypress', 'Jest', 'Test Planning'],
-    image: null,
+    links: [
+      { title: 'Portfolio', url: '' },
+      { title: 'GitHub', url: '' },
+      { title: 'LinkedIn', url: 'https://www.linkedin.com/in/katrinaelisewright/' },
+    ],
+    image: '/images/team/Katrina.jpg',
   },
 ];
 ---
@@ -114,10 +154,15 @@ const developers = [
                   <p class="text-primary-500 font-medium mb-3">{dev.role}</p>
                   <p class="mb-4" style="color: var(--text-secondary);">{dev.bio}</p>
                   <div class="flex flex-wrap gap-2">
-                    {dev.skills.map((skill) => (
-                      <span class="px-3 py-1 text-sm rounded-full bg-primary-100 text-primary-700 dark:bg-primary-900/50 dark:text-primary-300">
-                        {skill}
-                      </span>
+                    {dev.links.filter(link => link.url).map((link) => (
+                      <a 
+                        href={link.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="px-3 py-1 text-sm rounded-full bg-primary-100 text-primary-700 dark:bg-primary-900/50 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-800/50 transition-colors"
+                      >
+                        {link.title} →
+                      </a>
                     ))}
                   </div>
                 </div>
