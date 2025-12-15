@@ -108,16 +108,18 @@ git push origin feature/your-branch-name
 
 ---
 
-## 🔒 Branch Protection (Recommended Setup)
+## 🔒 Why We Use This Workflow
 
-**Repository Admin should enable:**
+Since our repository is private on GitHub Free, we don't have automatic branch protection enforcement. **This means we rely on team discipline to follow these guidelines.**
 
-1. Go to GitHub → Settings → Branches
-2. Add rule for `main` branch:
-   - ✅ Require pull request reviews (at least 1)
-   - ✅ Require status checks to pass
-   - ✅ Require branches to be up to date
-   - ✅ Include administrators (optional, but recommended)
+Please:
+
+- ✅ Always create a feature branch
+- ✅ Always open a Pull Request
+- ✅ Always get at least 1 teammate to review before merging
+- ❌ Never push directly to `main`
+
+This keeps our codebase stable and ensures everyone's changes are reviewed.
 
 ---
 
