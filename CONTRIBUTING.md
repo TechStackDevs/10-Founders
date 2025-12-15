@@ -70,7 +70,7 @@ git push origin feature/your-branch-name
 
 ### 5. **Create a Pull Request**
 
-- Go to GitHub: https://github.com/BradenKartchner/10-Founders
+- Go to GitHub: https://github.com/schlajo/10-Founders
 - Click "New Pull Request"
 - Select your branch
 - Add a clear description of what you changed

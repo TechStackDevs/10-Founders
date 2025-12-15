@@ -18,7 +18,7 @@ Before you begin, make sure you have:
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/BradenKartchner/10-Founders.git
+git clone https://github.com/schlajo/10-Founders.git
 cd 10-Founders
 ```
 
@@ -113,6 +113,24 @@ Open that URL in your browser to see the site. The page will automatically reloa
 - Must start with `/images/team/`
 - Must match your filename exactly (case-sensitive)
 - Include the file extension (`.jpg`, `.png`, etc.)
+
+---
+
+## 🌐 Live Site
+
+**[TechStackDevs.com](https://techstackdevs.com)**
+
+## 🚀 Deployment
+
+This site is deployed on **Vercel**.
+
+👉 **See [DEPLOYMENT.md](./DEPLOYMENT.md) for deployment instructions and domain setup.**
+
+**Quick deploy:**
+
+- Connect your GitHub repo to Vercel
+- Vercel auto-detects Astro and deploys
+- Add your custom domain in Vercel settings
 
 ---
 
