@@ -1,6 +1,53 @@
-# 10-Founders
+# Tech Stack Devs
 
 A modern static website for our tech business, showcasing our services for building apps and websites.
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Before you begin, make sure you have:
+
+- **Node.js** installed (version 18 or higher)
+  - Check your version: `node --version`
+  - Download: [nodejs.org](https://nodejs.org/)
+- **Git** installed
+  - Check your version: `git --version`
+  - Download: [git-scm.com](https://git-scm.com/)
+
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/BradenKartchner/10-Founders.git
+cd 10-Founders
+```
+
+### Step 2: Install Dependencies
+
+```bash
+npm install
+```
+
+This will install all required packages (Astro, Tailwind, etc.)
+
+### Step 3: Start the Development Server
+
+```bash
+npm run dev
+```
+
+The site will be available at `http://localhost:4321`
+
+Open that URL in your browser to see the site. The page will automatically reload when you make changes!
+
+### Step 4: Make Your Changes
+
+- Create a feature branch (see [CONTRIBUTING.md](./CONTRIBUTING.md))
+- Make your changes
+- Test locally with `npm run dev`
+- Push and create a Pull Request
+
+---
 
 ## 🚀 Tech Stack
 
@@ -48,10 +95,16 @@ A modern static website for our tech business, showcasing our services for build
   name: 'Your Name',
   role: 'Your Role',
   bio: 'A short bio about yourself and your expertise.',
-  skills: ['Skill 1', 'Skill 2', 'Skill 3', 'Skill 4'],
+  links: [
+    { title: 'Portfolio', url: 'https://your-portfolio.com' },
+    { title: 'GitHub', url: 'https://github.com/yourusername' },
+    { title: 'LinkedIn', url: 'https://linkedin.com/in/yourusername' },
+  ],
   image: '/images/team/yourname.jpg',
 },
 ```
+
+**Note:** Only links with a URL filled in will be displayed. Leave `url: ''` empty if you don't want to show that link.
 
 ### Image Path Format
 
