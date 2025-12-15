@@ -47,6 +47,8 @@ Open that URL in your browser to see the site. The page will automatically reloa
 - Test locally with `npm run dev`
 - Push and create a Pull Request
 
+**First time adding your profile?** 👉 See the [Adding Your Developer Profile](#-adding-your-developer-profile) section below.
+
 ---
 
 ## 🚀 Tech Stack
