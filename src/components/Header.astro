@@ -12,15 +12,12 @@ const currentPath = Astro.url.pathname;
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 border-b transition-colors duration-300" style="background-color: var(--bg-primary); border-color: var(--border-color);">
-  <nav class="container mx-auto px-4 py-4">
+  <nav class="container mx-auto px-4 py-5 dark:py-0">
     <div class="flex items-center justify-between">
       <!-- Logo -->
       <a href="/" class="flex items-center group">
-        <img 
-          src="/images/logo.png" 
-          alt="Tech Stack Devs" 
-          class="h-10 w-auto"
-        />
+        <img src="/images/logo-no-bg.png" alt="Tech Stack Devs" class="h-14 w-auto block dark:hidden" />
+        <img src="/images/logo-transparent.png.webp" alt="Tech Stack Devs" class="h-24 w-auto hidden dark:block" />
       </a>
 
       <!-- Desktop Navigation -->
