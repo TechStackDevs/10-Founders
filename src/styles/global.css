@@ -7,7 +7,7 @@
   --color-primary-50: #f0fdfa;
   --color-primary-100: #ccfbf1;
   --color-primary-200: #99f6e4;
-  --color-primary-300: #8cd9c8;
+  --color-primary-300: #6ee0b5;
   --color-primary-400: #4dbdac;
   --color-primary-500: #2a8a8c;
   --color-primary-600: #238080;
@@ -63,7 +63,7 @@ body {
     #1e4263 0%,
     #2a8a8c 40%,
     #4dbdac 70%,
-    #8cd9c8 100%
+    #6ee0b5 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -76,7 +76,7 @@ body {
     #1e4263 0%,
     #2a8a8c 40%,
     #4dbdac 70%,
-    #8cd9c8 100%
+    #6ee0b5 100%
   );
 }
 
@@ -86,6 +86,6 @@ body {
     #1e4263 0%,
     #2a8a8c 33%,
     #4dbdac 66%,
-    #8cd9c8 100%
+    #6ee0b5 100%
   );
 }
