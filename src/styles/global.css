@@ -56,14 +56,14 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Gradient utilities - navy to teal to mint (matching logo) */
+/* Gradient utilities - Default: navy to teal to mint (matching logo) */
 .gradient-text {
   background: linear-gradient(
     135deg,
-    #1e4263 0%,
-    #2a8a8c 40%,
-    #4dbdac 70%,
-    #6ee0b5 100%
+    var(--gradient-1) 0%,
+    var(--gradient-2) 40%,
+    var(--gradient-3) 70%,
+    var(--gradient-4) 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -73,19 +73,35 @@ body {
 .gradient-bg {
   background: linear-gradient(
     135deg,
-    #1e4263 0%,
-    #2a8a8c 40%,
-    #4dbdac 70%,
-    #6ee0b5 100%
+    var(--gradient-1) 0%,
+    var(--gradient-2) 40%,
+    var(--gradient-3) 70%,
+    var(--gradient-4) 100%
   );
 }
 
 .gradient-bg-subtle {
   background: linear-gradient(
     135deg,
-    #1e4263 0%,
-    #2a8a8c 33%,
-    #4dbdac 66%,
-    #6ee0b5 100%
+    var(--gradient-1) 0%,
+    var(--gradient-2) 33%,
+    var(--gradient-3) 66%,
+    var(--gradient-4) 100%
   );
+}
+
+/* Color Theme: Logo (default) */
+:root {
+  --gradient-1: #1e4263;
+  --gradient-2: #2a8a8c;
+  --gradient-3: #4dbdac;
+  --gradient-4: #6ee0b5;
+}
+
+/* Color Theme: Blue Purple Pink */
+[data-color-theme="blue-purple-pink"] {
+  --gradient-1: #1e3a8a;
+  --gradient-2: #7c3aed;
+  --gradient-3: #ec4899;
+  --gradient-4: #f9a8d4;
 }

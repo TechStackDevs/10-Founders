@@ -36,9 +36,31 @@ const currentPath = Astro.url.pathname;
         ))}
       </div>
 
-      <!-- Right side: Theme toggle + Mobile menu -->
-      <div class="flex items-center gap-4">
-        <!-- Theme Toggle -->
+      <!-- Right side: Color theme + Dark/Light toggle + Mobile menu -->
+      <div class="flex items-center gap-2">
+        <!-- Color Theme Toggle -->
+        <button
+          id="color-theme-toggle"
+          class="p-2 rounded-lg transition-colors hover:bg-primary-100 dark:hover:bg-primary-900/30"
+          aria-label="Toggle color theme"
+          title="Change color theme"
+        >
+          <!-- Color wheel icon -->
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="9" stroke="url(#colorWheelGradient)" />
+            <circle cx="12" cy="12" r="4" fill="url(#colorWheelGradient)" />
+            <defs>
+              <linearGradient id="colorWheelGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#1e4263" />
+                <stop offset="33%" stop-color="#7c3aed" />
+                <stop offset="66%" stop-color="#ec4899" />
+                <stop offset="100%" stop-color="#4dbdac" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </button>
+
+        <!-- Dark/Light Theme Toggle -->
         <button
           id="theme-toggle"
           class="p-2 rounded-lg transition-colors hover:bg-primary-100 dark:hover:bg-primary-900/30"
@@ -89,7 +111,10 @@ const currentPath = Astro.url.pathname;
 </header>
 
 <script>
-  // Theme toggle functionality - dark mode is default
+  // Available color themes (add more here as needed)
+  const colorThemes = ['logo', 'blue-purple-pink'];
+
+  // Dark/Light theme toggle functionality - dark mode is default
   function initTheme() {
     const themeToggle = document.getElementById('theme-toggle');
     const html = document.documentElement;
@@ -107,6 +132,33 @@ const currentPath = Astro.url.pathname;
     });
   }
 
+  // Color theme toggle functionality
+  function initColorTheme() {
+    const colorThemeToggle = document.getElementById('color-theme-toggle');
+    const html = document.documentElement;
+    
+    // Load saved color theme (default is 'logo' - no attribute needed)
+    const savedColorTheme = localStorage.getItem('colorTheme') || 'logo';
+    if (savedColorTheme !== 'logo') {
+      html.setAttribute('data-color-theme', savedColorTheme);
+    }
+    
+    colorThemeToggle?.addEventListener('click', () => {
+      const currentTheme = html.getAttribute('data-color-theme') || 'logo';
+      const currentIndex = colorThemes.indexOf(currentTheme);
+      const nextIndex = (currentIndex + 1) % colorThemes.length;
+      const nextTheme = colorThemes[nextIndex];
+      
+      if (nextTheme === 'logo') {
+        html.removeAttribute('data-color-theme');
+      } else {
+        html.setAttribute('data-color-theme', nextTheme);
+      }
+      
+      localStorage.setItem('colorTheme', nextTheme);
+    });
+  }
+
   // Mobile menu functionality
   function initMobileMenu() {
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -119,11 +171,13 @@ const currentPath = Astro.url.pathname;
 
   // Initialize on page load
   initTheme();
+  initColorTheme();
   initMobileMenu();
 
   // Re-initialize on Astro page transitions
   document.addEventListener('astro:after-swap', () => {
     initTheme();
+    initColorTheme();
     initMobileMenu();
   });
 </script>

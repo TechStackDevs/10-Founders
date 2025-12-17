@@ -31,6 +31,12 @@ const { title, description = "Tech Stack Devs - Building apps and websites for y
         if (savedTheme !== 'light') {
           document.documentElement.classList.add('dark');
         }
+        
+        // Prevent flash of wrong color theme
+        const savedColorTheme = localStorage.getItem('colorTheme');
+        if (savedColorTheme && savedColorTheme !== 'logo') {
+          document.documentElement.setAttribute('data-color-theme', savedColorTheme);
+        }
       })();
     </script>
   </head>
