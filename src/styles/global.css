@@ -100,26 +100,26 @@ body {
 
 /* Color Theme: Blue Purple Pink */
 [data-color-theme="blue-purple-pink"] {
-  --gradient-1: #1e3a8a;
+  --gradient-1: #2563eb;
   --gradient-2: #7c3aed;
-  --gradient-3: #ec4899;
-  --gradient-4: #f9a8d4;
+  --gradient-3: #c026d3;
+  --gradient-4: #e879f9;
 
-  /* Override primary colors */
-  --color-primary-50: #fdf4ff;
-  --color-primary-100: #fae8ff;
-  --color-primary-200: #f5d0fe;
-  --color-primary-300: #f0abfc;
-  --color-primary-400: #e879f9;
-  --color-primary-500: #a855f7;
-  --color-primary-600: #9333ea;
-  --color-primary-700: #7c3aed;
+  /* Override primary colors - more violet/purple based */
+  --color-primary-50: #f5f3ff;
+  --color-primary-100: #ede9fe;
+  --color-primary-200: #ddd6fe;
+  --color-primary-300: #c4b5fd;
+  --color-primary-400: #a78bfa;
+  --color-primary-500: #8b5cf6;
+  --color-primary-600: #7c3aed;
+  --color-primary-700: #6d28d9;
   --color-primary-800: #5b21b6;
   --color-primary-900: #4c1d95;
   --color-primary-950: #2e1065;
 
-  /* Override accent colors */
-  --color-accent-400: #f472b6;
-  --color-accent-500: #ec4899;
-  --color-accent-600: #db2777;
+  /* Override accent colors - more magenta/fuchsia */
+  --color-accent-400: #e879f9;
+  --color-accent-500: #d946ef;
+  --color-accent-600: #c026d3;
 }
