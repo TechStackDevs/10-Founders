@@ -99,12 +99,18 @@ body {
 }
 
 /* Color Theme: Blue Purple Pink */
+:root[data-color-theme="blue-purple-pink"],
 [data-color-theme="blue-purple-pink"] {
   --gradient-1: #2563eb;
   --gradient-2: #7c3aed;
   --gradient-3: #c026d3;
   --gradient-4: #e879f9;
+}
 
+:root[data-color-theme="blue-purple-pink"],
+:root[data-color-theme="blue-purple-pink"] *,
+[data-color-theme="blue-purple-pink"],
+[data-color-theme="blue-purple-pink"] * {
   /* Override primary colors - more violet/purple based */
   --color-primary-50: #f5f3ff;
   --color-primary-100: #ede9fe;
