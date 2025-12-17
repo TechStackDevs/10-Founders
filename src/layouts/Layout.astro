@@ -24,8 +24,11 @@ const { title, description = "Tech Stack Devs - Building apps and websites for y
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <title>{title}</title>
     <script is:inline>
-      // Prevent flash of wrong theme - dark mode is default
+      // Prevent flash/jump during initial theme load
       (function() {
+        // Disable transitions initially
+        document.documentElement.classList.add('no-transitions');
+        
         const savedTheme = localStorage.getItem('theme');
         // Default to dark mode unless explicitly set to light
         if (savedTheme !== 'light') {
@@ -37,12 +40,19 @@ const { title, description = "Tech Stack Devs - Building apps and websites for y
         if (savedColorTheme && savedColorTheme !== 'logo') {
           document.documentElement.setAttribute('data-color-theme', savedColorTheme);
         }
+        
+        // Re-enable transitions after initial render
+        requestAnimationFrame(function() {
+          requestAnimationFrame(function() {
+            document.documentElement.classList.remove('no-transitions');
+          });
+        });
       })();
     </script>
   </head>
   <body class="min-h-screen flex flex-col font-sans antialiased">
     <Header />
-    <main class="flex-1 pt-[73px]">
+    <main class="flex-1 pt-24">
       <slot />
     </main>
     <Footer />

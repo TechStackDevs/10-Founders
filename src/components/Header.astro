@@ -8,14 +8,16 @@ const navItems = [
   { label: 'Contact', href: '/contact' },
 ];
 
-const currentPath = Astro.url.pathname;
+// Normalize path by removing trailing slash (except for root)
+const rawPath = Astro.url.pathname;
+const currentPath = rawPath === '/' ? '/' : rawPath.replace(/\/$/, '');
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 border-b transition-colors duration-300" style="background-color: var(--bg-primary); border-color: var(--border-color);">
-  <nav class="container mx-auto px-4 py-5 dark:py-0">
-    <div class="flex items-center justify-between">
-      <!-- Logo -->
-      <a href="/" class="flex items-center group">
+  <nav class="container mx-auto px-4">
+    <div class="flex items-center justify-between h-24">
+      <!-- Logo - fixed width container to prevent layout shift -->
+      <a href="/" class="flex items-center justify-start group w-48">
         <img src="/images/logo-no-bg.png" alt="Tech Stack Devs" class="h-14 w-auto block dark:hidden" />
         <img src="/images/logo-transparent.png.webp" alt="Tech Stack Devs" class="h-24 w-auto hidden dark:block" />
       </a>

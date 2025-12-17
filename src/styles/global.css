@@ -56,6 +56,14 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Disable all transitions during initial page load to prevent flash/jump */
+.no-transitions,
+.no-transitions *,
+.no-transitions *::before,
+.no-transitions *::after {
+  transition: none !important;
+}
+
 /* Gradient utilities - Default: navy to teal to mint (matching logo) */
 .gradient-text {
   background: linear-gradient(
