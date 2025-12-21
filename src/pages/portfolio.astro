@@ -1,4 +1,5 @@
 ---
+import { imageConfig } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 
 const projects = [
@@ -8,6 +9,31 @@ const projects = [
     description: 'A gamified activity discovery app that helps people disconnect from screens by suggesting fun quests, adventures, and experiences to try in the real world, with rewards and community sharing for completed activities.',
     tags: ['React', 'Typescript', 'Nx', 'Bun', 'Tanstack Router','Prisma', 'Tauri', 'Capacitor', 'Vite', 'Tailwind'],
     image: '/images/portfolio/consemble.png',
+    color: 'from-amber-500 to-orange-600',
+  },
+  {
+    title: 'Support Local',
+    category: 'Web Application',
+    description: 'Community marketplace platform for discovering and supporting local businesses, nonprofits, and events with interactive engagement features.',
+    tags: ['React', 'Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Tailwind', 'Clerk', 'AWS S3', 'Docker', 'Vercel'],
+    image: '/images/portfolio/support-local-cropped.png',
+    color: 'from-green-500 to-emerald-600',
+    url: 'https://supportlocalusa.com/',
+  },
+  {
+    title: 'Colors',
+    category: 'Web Application',
+    description: 'A color-mixing puzzle game.',
+    tags: ['React', 'Javascript', 'Tailwind', 'Node.js','Supabase', 'Capacitor', 'Android Studio', 'PostCSS', 'Vite', 'Git'],
+    image: '/images/portfolio/colors-icon.png',
+    color: 'from-blue-600 to-cyan-500',
+  },
+  {
+    title: 'FinFlow Dashboard',
+    category: 'Web Application',
+    description: 'A comprehensive financial analytics platform for tracking investments, expenses, and portfolio performance in real-time.',
+    tags: ['React', 'Node.js', 'PostgreSQL', 'Chart.js'],
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
     color: 'from-blue-600 to-cyan-500',
   },
   {
@@ -35,13 +61,12 @@ const projects = [
     color: 'from-violet-600 to-purple-600',
   },
   {
-    title: 'Support Local',
+    title: 'GreenPath Logistics',
     category: 'Web Application',
-    description: 'Community marketplace platform for discovering and supporting local businesses, nonprofits, and events with interactive engagement features.',
-    tags: ['React', 'Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Tailwind', 'Clerk', 'AWS S3', 'Docker', 'Vercel'],
-    image: '/images/portfolio/support-local-cropped.png',
+    description: 'Carbon-neutral delivery route optimization system helping logistics companies reduce their environmental impact.',
+    tags: ['React', 'Python', 'TensorFlow', 'Maps API'],
+    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=600&fit=crop',
     color: 'from-green-500 to-emerald-600',
-    url: 'https://supportlocalusa.com/',
   },
   {
     title: 'EventHorizon',
@@ -51,12 +76,6 @@ const projects = [
     image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop',
     color: 'from-pink-500 to-rose-600',
   },
-  // image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
-  // image: 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&h=600&fit=crop',
-  // image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
-  // image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop',
-  // image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop',
-  // image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=600&fit=crop',
 ];
 
 const testimonials = [
