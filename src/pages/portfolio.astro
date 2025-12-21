@@ -3,11 +3,11 @@ import Layout from '../layouts/Layout.astro';
 
 const projects = [
   {
-    title: 'FinFlow Dashboard',
+    title: 'Consemble',
     category: 'Web Application',
-    description: 'A comprehensive financial analytics platform for tracking investments, expenses, and portfolio performance in real-time.',
-    tags: ['React', 'Node.js', 'PostgreSQL', 'Chart.js'],
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+    description: 'A gamified activity discovery app that helps people disconnect from screens by suggesting fun quests, adventures, and experiences to try in the real world, with rewards and community sharing for completed activities.',
+    tags: ['React', 'Typescript', 'Nx', 'Bun', 'Tanstack Router','Prisma', 'Tauri', 'Capacitor', 'Vite', 'Tailwind'],
+    image: '/images/portfolio/consemble.png',
     color: 'from-blue-600 to-cyan-500',
   },
   {
@@ -35,12 +35,13 @@ const projects = [
     color: 'from-violet-600 to-purple-600',
   },
   {
-    title: 'GreenPath Logistics',
+    title: 'Support Local',
     category: 'Web Application',
-    description: 'Carbon-neutral delivery route optimization system helping logistics companies reduce their environmental impact.',
-    tags: ['React', 'Python', 'TensorFlow', 'Maps API'],
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=600&fit=crop',
+    description: 'Community marketplace platform for discovering and supporting local businesses, nonprofits, and events with interactive engagement features.',
+    tags: ['React', 'Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Tailwind', 'Clerk', 'AWS S3', 'Docker', 'Vercel'],
+    image: '/images/portfolio/support-local-cropped.png',
     color: 'from-green-500 to-emerald-600',
+    url: 'https://supportlocalusa.com/',
   },
   {
     title: 'EventHorizon',
@@ -50,6 +51,12 @@ const projects = [
     image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop',
     color: 'from-pink-500 to-rose-600',
   },
+  // image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+  // image: 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&h=600&fit=crop',
+  // image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
+  // image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop',
+  // image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop',
+  // image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=600&fit=crop',
 ];
 
 const testimonials = [
@@ -101,52 +108,104 @@ const testimonials = [
       <div class="max-w-7xl mx-auto">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div 
-              class="group rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2"
-              style={`background-color: var(--card-bg); box-shadow: var(--card-shadow); animation: fadeInUp 0.6s ease-out ${index * 0.1}s backwards;`}
-            >
-              <!-- Project Image -->
-              <div class="relative h-56 overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div class={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-0 group-hover:opacity-70 transition-opacity duration-300`}></div>
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span class="px-6 py-3 bg-white text-gray-900 rounded-full font-semibold text-sm shadow-lg">
-                    View Details
-                  </span>
-                </div>
-                <!-- Category Badge -->
-                <div class="absolute top-4 left-4">
-                  <span class={`px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${project.color} text-white`}>
-                    {project.category}
-                  </span>
-                </div>
-              </div>
-              
-              <!-- Project Info -->
-              <div class="p-6">
-                <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">
-                  {project.title}
-                </h3>
-                <p class="text-sm mb-4 line-clamp-2" style="color: var(--text-secondary);">
-                  {project.description}
-                </p>
-                <!-- Tags -->
-                <div class="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span 
-                      class="px-2 py-1 rounded-md text-xs font-medium"
-                      style="background-color: var(--bg-secondary); color: var(--text-muted);"
-                    >
-                      {tag}
+            project.url ? (
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 block"
+                style={`background-color: var(--card-bg); box-shadow: var(--card-shadow); animation: fadeInUp 0.6s ease-out ${index * 0.1}s backwards;`}
+              >
+                <!-- Project Image -->
+                <div class="relative h-56 overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div class={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-0 group-hover:opacity-70 transition-opacity duration-300`}></div>
+                  <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span class="px-6 py-3 bg-white text-gray-900 rounded-full font-semibold text-sm shadow-lg">
+                      Visit Site
                     </span>
-                  ))}
+                  </div>
+                  <!-- Category Badge -->
+                  <div class="absolute top-4 left-4">
+                    <span class={`px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${project.color} text-white`}>
+                      {project.category}
+                    </span>
+                  </div>
+                </div>
+                
+                <!-- Project Info -->
+                <div class="p-6">
+                  <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">
+                    {project.title}
+                  </h3>
+                  <p class="text-sm mb-4 line-clamp-2" style="color: var(--text-secondary);">
+                    {project.description}
+                  </p>
+                  <!-- Tags -->
+                  <div class="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span 
+                        class="px-2 py-1 rounded-md text-xs font-medium"
+                        style="background-color: var(--bg-secondary); color: var(--text-muted);"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </a>
+            ) : (
+              <div
+                class="group rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2"
+                style={`background-color: var(--card-bg); box-shadow: var(--card-shadow); animation: fadeInUp 0.6s ease-out ${index * 0.1}s backwards;`}
+              >
+                <!-- Project Image -->
+                <div class="relative h-56 overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div class={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-0 group-hover:opacity-70 transition-opacity duration-300`}></div>
+                  <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span class="px-6 py-3 bg-white text-gray-900 rounded-full font-semibold text-sm shadow-lg">
+                      View Details
+                    </span>
+                  </div>
+                  <!-- Category Badge -->
+                  <div class="absolute top-4 left-4">
+                    <span class={`px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${project.color} text-white`}>
+                      {project.category}
+                    </span>
+                  </div>
+                </div>
+                
+                <!-- Project Info -->
+                <div class="p-6">
+                  <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">
+                    {project.title}
+                  </h3>
+                  <p class="text-sm mb-4 line-clamp-2" style="color: var(--text-secondary);">
+                    {project.description}
+                  </p>
+                  <!-- Tags -->
+                  <div class="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span 
+                        class="px-2 py-1 rounded-md text-xs font-medium"
+                        style="background-color: var(--bg-secondary); color: var(--text-muted);"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            )
           ))}
         </div>
       </div>
