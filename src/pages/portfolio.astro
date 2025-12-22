@@ -1,4 +1,5 @@
 ---
+import { imageConfig } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 
 const projects = [
@@ -49,6 +50,31 @@ const projects = [
     tags: ['Flutter', 'Node.js', 'WebRTC', 'Socket.io'],
     image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop',
     color: 'from-pink-500 to-rose-600',
+  },
+  {
+    title: 'Consemble',
+    category: 'Web Application',
+    description: 'A gamified activity discovery app that helps people disconnect from screens by suggesting fun quests, adventures, and experiences to try in the real world, with rewards and community sharing for completed activities.',
+    tags: ['React', 'Typescript', 'Nx', 'Bun', 'Tanstack Router','Prisma', 'Tauri', 'Capacitor', 'Vite', 'Tailwind'],
+    image: '/images/portfolio/consemble.png',
+    color: 'from-amber-500 to-orange-600',
+  },
+  {
+    title: 'Support Local',
+    category: 'Web Application',
+    description: 'Community marketplace platform for discovering and supporting local businesses, nonprofits, and events with interactive engagement features.',
+    tags: ['React', 'Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Tailwind', 'Clerk', 'AWS S3', 'Docker', 'Vercel'],
+    image: '/images/portfolio/support-local-cropped.png',
+    color: 'from-green-500 to-emerald-600',
+    url: 'https://supportlocalusa.com/',
+  },
+  {
+    title: 'Colors',
+    category: 'Web Application',
+    description: 'A color-mixing puzzle game.',
+    tags: ['React', 'Javascript', 'Tailwind', 'Node.js','Supabase', 'Capacitor', 'Android Studio', 'PostCSS', 'Vite', 'Git'],
+    image: '/images/portfolio/colors-icon.png',
+    color: 'from-blue-600 to-cyan-500',
   },
 ];
 
@@ -101,52 +127,104 @@ const testimonials = [
       <div class="max-w-7xl mx-auto">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div 
-              class="group rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2"
-              style={`background-color: var(--card-bg); box-shadow: var(--card-shadow); animation: fadeInUp 0.6s ease-out ${index * 0.1}s backwards;`}
-            >
-              <!-- Project Image -->
-              <div class="relative h-56 overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div class={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-0 group-hover:opacity-70 transition-opacity duration-300`}></div>
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span class="px-6 py-3 bg-white text-gray-900 rounded-full font-semibold text-sm shadow-lg">
-                    View Details
-                  </span>
-                </div>
-                <!-- Category Badge -->
-                <div class="absolute top-4 left-4">
-                  <span class={`px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${project.color} text-white`}>
-                    {project.category}
-                  </span>
-                </div>
-              </div>
-              
-              <!-- Project Info -->
-              <div class="p-6">
-                <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">
-                  {project.title}
-                </h3>
-                <p class="text-sm mb-4 line-clamp-2" style="color: var(--text-secondary);">
-                  {project.description}
-                </p>
-                <!-- Tags -->
-                <div class="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span 
-                      class="px-2 py-1 rounded-md text-xs font-medium"
-                      style="background-color: var(--bg-secondary); color: var(--text-muted);"
-                    >
-                      {tag}
+            project.url ? (
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 block"
+                style={`background-color: var(--card-bg); box-shadow: var(--card-shadow); animation: fadeInUp 0.6s ease-out ${index * 0.1}s backwards;`}
+              >
+                <!-- Project Image -->
+                <div class="relative h-56 overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div class={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-0 group-hover:opacity-70 transition-opacity duration-300`}></div>
+                  <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span class="px-6 py-3 bg-white text-gray-900 rounded-full font-semibold text-sm shadow-lg">
+                      Visit Site
                     </span>
-                  ))}
+                  </div>
+                  <!-- Category Badge -->
+                  <div class="absolute top-4 left-4">
+                    <span class={`px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${project.color} text-white`}>
+                      {project.category}
+                    </span>
+                  </div>
+                </div>
+                
+                <!-- Project Info -->
+                <div class="p-6">
+                  <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">
+                    {project.title}
+                  </h3>
+                  <p class="text-sm mb-4 line-clamp-2" style="color: var(--text-secondary);">
+                    {project.description}
+                  </p>
+                  <!-- Tags -->
+                  <div class="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span 
+                        class="px-2 py-1 rounded-md text-xs font-medium"
+                        style="background-color: var(--bg-secondary); color: var(--text-muted);"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </a>
+            ) : (
+              <div
+                class="group rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2"
+                style={`background-color: var(--card-bg); box-shadow: var(--card-shadow); animation: fadeInUp 0.6s ease-out ${index * 0.1}s backwards;`}
+              >
+                <!-- Project Image -->
+                <div class="relative h-56 overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div class={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-0 group-hover:opacity-70 transition-opacity duration-300`}></div>
+                  <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span class="px-6 py-3 bg-white text-gray-900 rounded-full font-semibold text-sm shadow-lg">
+                      View Details
+                    </span>
+                  </div>
+                  <!-- Category Badge -->
+                  <div class="absolute top-4 left-4">
+                    <span class={`px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${project.color} text-white`}>
+                      {project.category}
+                    </span>
+                  </div>
+                </div>
+                
+                <!-- Project Info -->
+                <div class="p-6">
+                  <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">
+                    {project.title}
+                  </h3>
+                  <p class="text-sm mb-4 line-clamp-2" style="color: var(--text-secondary);">
+                    {project.description}
+                  </p>
+                  <!-- Tags -->
+                  <div class="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span 
+                        class="px-2 py-1 rounded-md text-xs font-medium"
+                        style="background-color: var(--bg-secondary); color: var(--text-muted);"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            )
           ))}
         </div>
       </div>
@@ -163,15 +241,15 @@ const testimonials = [
             <div class="text-lg font-medium" style="color: var(--text-secondary);">Projects Completed</div>
           </div>
           <div class="text-center">
-            <div class="text-5xl md:text-6xl font-bold gradient-text mb-2">25+</div>
-            <div class="text-lg font-medium" style="color: var(--text-secondary);">Happy Clients</div>
+            <div class="text-5xl md:text-6xl font-bold gradient-text mb-2">100%</div>
+            <div class="text-lg font-medium" style="color: var(--text-secondary);">Client Satisfaction</div>
           </div>
           <div class="text-center">
             <div class="text-5xl md:text-6xl font-bold gradient-text mb-2">5+</div>
             <div class="text-lg font-medium" style="color: var(--text-secondary);">Years Experience</div>
           </div>
           <div class="text-center">
-            <div class="text-5xl md:text-6xl font-bold gradient-text mb-2">12</div>
+            <div class="text-5xl md:text-6xl font-bold gradient-text mb-2">10+</div>
             <div class="text-lg font-medium" style="color: var(--text-secondary);">Industries Served</div>
           </div>
         </div>
