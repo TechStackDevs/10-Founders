@@ -65,35 +65,30 @@ const websitePackages = [
     name: 'One-Page Site',
     description: 'Single scrolling page — perfect for landing pages',
     price: '$1,000 – $1,500',
-    hours: '10–15 hours',
     features: ['Responsive design', 'Basic SEO setup', 'Contact form', 'Hosting guidance'],
   },
   {
     name: '3-Page Site',
     description: 'Home / About / Contact — ideal for small businesses',
     price: '$1,500 – $2,000',
-    hours: '15–20 hours',
     features: ['Responsive design', 'Basic SEO setup', 'Contact form', 'Hosting guidance'],
   },
   {
     name: '5-Page Site',
     description: 'Standard small business website',
     price: '$2,000 – $3,000',
-    hours: '20–30 hours',
     features: ['Responsive design', 'Basic SEO setup', 'Contact form', 'Hosting guidance'],
   },
   {
     name: '7-Page Site',
     description: 'Extended website with additional pages and features',
     price: '$2,500 – $3,500',
-    hours: '25–35 hours',
     features: ['Responsive design', 'Basic SEO setup', 'Contact form', 'Hosting guidance'],
   },
   {
     name: 'CMS Site',
     description: 'WordPress or headless CMS with editable pages',
     price: '$3,000 – $4,000',
-    hours: '30–40 hours',
     features: ['Admin panel', 'Content management', 'Responsive design', 'SEO optimization'],
     highlighted: true,
   },
@@ -101,7 +96,6 @@ const websitePackages = [
     name: 'Custom UI + CMS',
     description: 'Custom design with full admin capabilities',
     price: '$4,000 – $6,000',
-    hours: '40–60 hours',
     features: ['Custom design', 'Admin panel', 'Advanced features', 'Performance tuning'],
   },
 ];
@@ -112,14 +106,12 @@ const appPackages = [
     name: 'MVP App',
     description: 'Auth + CRUD + basic UI — perfect for startups',
     price: '$6,000 – $8,000',
-    hours: '60–80 hours',
     features: ['User authentication', 'Database integration', 'Basic dashboard', 'Responsive UI'],
   },
   {
     name: 'Advanced App',
     description: 'Roles, dashboards, APIs — for growing businesses',
     price: '$8,000 – $12,000',
-    hours: '80–120 hours',
     features: ['Role-based access', 'Advanced dashboards', 'API integrations', 'Performance optimization'],
     highlighted: true,
   },
@@ -127,7 +119,6 @@ const appPackages = [
     name: 'Enterprise App',
     description: 'Complex logic + integrations — full-scale solutions',
     price: '$12,000 – $20,000+',
-    hours: '120–200 hours',
     features: ['Complex business logic', 'Third-party integrations', 'Scalable architecture', 'Security hardening'],
   },
 ];
@@ -138,14 +129,12 @@ const mobilePackages = [
     name: 'Simple Mobile App',
     description: 'Basic React Native / Expo app with core features',
     price: '$6,000 – $8,000',
-    hours: '60–80 hours',
     features: ['iOS & Android support', 'Basic UI/UX', 'API integration', 'App Store deployment'],
   },
   {
     name: 'Full-Featured Mobile App',
     description: 'Advanced features, offline support, push notifications',
     price: '$8,000 – $12,000',
-    hours: '80–120 hours',
     features: ['Offline-first architecture', 'Push notifications', 'Advanced UI/UX', 'Native features'],
     highlighted: true,
   },
@@ -153,7 +142,6 @@ const mobilePackages = [
     name: 'Enterprise Mobile App',
     description: 'Complex integrations, custom native modules, enterprise security',
     price: '$12,000 – $20,000+',
-    hours: '120–200+ hours',
     features: ['Custom native modules', 'Enterprise security', 'Complex integrations', 'White-label options'],
   },
 ];
@@ -164,7 +152,6 @@ const aiPackages = [
     name: 'AI Starter',
     description: 'Plug-and-play AI for small businesses & MVPs',
     price: '$1,000 – $2,000',
-    hours: '10–20 hours',
     features: ['Chatbot integration', 'Content generation', 'Basic AI search', 'Prompt engineering'],
     examples: 'Chatbots, AI contact forms, content generation',
   },
@@ -172,7 +159,6 @@ const aiPackages = [
     name: 'AI Enhanced',
     description: 'Business logic aware AI for dashboards & workflows',
     price: '$2,000 – $4,000',
-    hours: '20–40 hours',
     features: ['Context-aware prompts', 'Workflow automation', 'Smart recommendations', 'Error handling'],
     examples: 'AI copilots, CRM summarization, smart workflows',
     highlighted: true,
@@ -181,7 +167,6 @@ const aiPackages = [
     name: 'AI Advanced',
     description: 'Data + reasoning for SaaS & decision systems',
     price: '$4,000 – $8,000',
-    hours: '40–80 hours',
     features: ['Vector database setup', 'RAG implementation', 'Multi-step reasoning', 'Monitoring & logging'],
     examples: 'RAG systems, AI agents, AI analytics',
   },
@@ -189,7 +174,6 @@ const aiPackages = [
     name: 'AI Custom / Enterprise',
     description: 'Proprietary workflows & complex systems',
     price: '$8,000 – $15,000+',
-    hours: '80–150+ hours',
     features: ['Architecture design', 'Model fine-tuning', 'Advanced safeguards', 'Documentation & training'],
     examples: 'Fine-tuned models, multi-agent systems, compliance AI',
   },
@@ -201,10 +185,10 @@ const addonCategories = [
     title: 'Growth & Marketing',
     icon: '📈',
     addons: [
-      { name: 'SEO Setup (Basic)', price: '$500 – $1,000', hours: '5–10 hours', description: 'Keyword research, optimization, analytics setup' },
-      { name: 'SEO Advanced', price: '$1,500 – $2,500', hours: '15–25 hours', description: 'Technical audits, content strategy, and optimization' },
-      { name: 'Social Media Setup', price: '$500 – $800', hours: '5–8 hours', description: 'Setup and branding for 3 platforms' },
-      { name: 'Content Strategy Session', price: '$500', hours: '5 hours', description: 'Strategic planning for your content marketing' },
+      { name: 'SEO Setup (Basic)', price: '$500 – $1,000', description: 'Keyword research, optimization, analytics setup' },
+      { name: 'SEO Advanced', price: '$1,500 – $2,500', description: 'Technical audits, content strategy, and optimization' },
+      { name: 'Social Media Setup', price: '$500 – $800', description: 'Setup and branding for 3 platforms' },
+      { name: 'Content Strategy Session', price: '$500', description: 'Strategic planning for your content marketing' },
     ],
   },
   {
@@ -221,10 +205,10 @@ const addonCategories = [
     title: 'Training & Maintenance',
     icon: '🎓',
     addons: [
-      { name: '1-Hour Training Session', price: '$150', hours: 'Live', description: 'One-on-one training for your team' },
-      { name: '5-Session Training Pack', price: '$700', hours: 'Live + recorded', description: 'Comprehensive training program' },
-      { name: 'Monthly Maintenance', price: '$500 – $1,500/mo', hours: 'Ongoing', description: 'Updates, bug fixes, and support' },
-      { name: 'Monthly AI Support', price: '$500 – $2,000/mo', hours: 'Ongoing', description: 'Ongoing AI maintenance and improvements' },
+      { name: '1-Hour Training Session', price: '$150', description: 'One-on-one training for your team' },
+      { name: '5-Session Training Pack', price: '$700', description: 'Comprehensive training program' },
+      { name: 'Monthly Maintenance', price: '$500 – $1,500/mo', description: 'Updates, bug fixes, and support' },
+      { name: 'Monthly AI Support', price: '$500 – $2,000/mo', description: 'Ongoing AI maintenance and improvements' },
     ],
   },
 ];
@@ -298,11 +282,8 @@ const addonCategories = [
               <h3 class={`text-xl font-bold mb-1 ${pkg.highlighted ? 'text-white' : ''}`} style={!pkg.highlighted ? 'color: var(--text-primary);' : ''}>
                 {pkg.name}
               </h3>
-              <div class={`text-2xl font-bold mb-2 ${pkg.highlighted ? 'text-white' : 'text-primary-500'}`}>
+              <div class={`text-2xl font-bold mb-4 ${pkg.highlighted ? 'text-white' : 'text-primary-500'}`}>
                 {pkg.price}
-              </div>
-              <div class={`text-sm mb-3 ${pkg.highlighted ? 'text-blue-100' : ''}`} style={!pkg.highlighted ? 'color: var(--text-muted);' : ''}>
-                {pkg.hours}
               </div>
               <p class={`text-sm mb-4 ${pkg.highlighted ? 'text-blue-100' : ''}`} style={!pkg.highlighted ? 'color: var(--text-secondary);' : ''}>
                 {pkg.description}
@@ -349,11 +330,8 @@ const addonCategories = [
               <h3 class={`text-xl font-bold mb-1 ${pkg.highlighted ? 'text-white' : ''}`} style={!pkg.highlighted ? 'color: var(--text-primary);' : ''}>
                 {pkg.name}
               </h3>
-              <div class={`text-2xl font-bold mb-2 ${pkg.highlighted ? 'text-white' : 'text-primary-500'}`}>
+              <div class={`text-2xl font-bold mb-4 ${pkg.highlighted ? 'text-white' : 'text-primary-500'}`}>
                 {pkg.price}
-              </div>
-              <div class={`text-sm mb-3 ${pkg.highlighted ? 'text-blue-100' : ''}`} style={!pkg.highlighted ? 'color: var(--text-muted);' : ''}>
-                {pkg.hours}
               </div>
               <p class={`text-sm mb-4 ${pkg.highlighted ? 'text-blue-100' : ''}`} style={!pkg.highlighted ? 'color: var(--text-secondary);' : ''}>
                 {pkg.description}
@@ -400,11 +378,8 @@ const addonCategories = [
               <h3 class={`text-xl font-bold mb-1 ${pkg.highlighted ? 'text-white' : ''}`} style={!pkg.highlighted ? 'color: var(--text-primary);' : ''}>
                 {pkg.name}
               </h3>
-              <div class={`text-2xl font-bold mb-2 ${pkg.highlighted ? 'text-white' : 'text-primary-500'}`}>
+              <div class={`text-2xl font-bold mb-4 ${pkg.highlighted ? 'text-white' : 'text-primary-500'}`}>
                 {pkg.price}
-              </div>
-              <div class={`text-sm mb-3 ${pkg.highlighted ? 'text-blue-100' : ''}`} style={!pkg.highlighted ? 'color: var(--text-muted);' : ''}>
-                {pkg.hours}
               </div>
               <p class={`text-sm mb-4 ${pkg.highlighted ? 'text-blue-100' : ''}`} style={!pkg.highlighted ? 'color: var(--text-secondary);' : ''}>
                 {pkg.description}
@@ -451,11 +426,8 @@ const addonCategories = [
               <h3 class={`text-lg font-bold mb-1 ${pkg.highlighted ? 'text-white' : ''}`} style={!pkg.highlighted ? 'color: var(--text-primary);' : ''}>
                 {pkg.name}
               </h3>
-              <div class={`text-xl font-bold mb-2 ${pkg.highlighted ? 'text-white' : 'text-primary-500'}`}>
+              <div class={`text-xl font-bold mb-3 ${pkg.highlighted ? 'text-white' : 'text-primary-500'}`}>
                 {pkg.price}
-              </div>
-              <div class={`text-xs mb-3 ${pkg.highlighted ? 'text-blue-100' : ''}`} style={!pkg.highlighted ? 'color: var(--text-muted);' : ''}>
-                {pkg.hours}
               </div>
               <p class={`text-sm mb-3 ${pkg.highlighted ? 'text-blue-100' : ''}`} style={!pkg.highlighted ? 'color: var(--text-secondary);' : ''}>
                 {pkg.description}
@@ -510,11 +482,10 @@ const addonCategories = [
               <div class="space-y-3">
                 {category.addons.map((addon) => (
                   <div class="p-4 rounded-xl border transition-all duration-300 hover:border-primary-300 dark:hover:border-primary-600" style="background-color: var(--card-bg); border-color: var(--border-color);">
-                    <div class="flex justify-between items-start mb-1">
+                    <div class="flex justify-between items-start mb-2">
                       <h4 class="font-semibold" style="color: var(--text-primary);">{addon.name}</h4>
                       <span class="text-sm font-bold text-primary-500 whitespace-nowrap ml-2">{addon.price}</span>
                     </div>
-                    <div class="text-xs mb-1" style="color: var(--text-muted);">{addon.hours}</div>
                     <p class="text-sm" style="color: var(--text-secondary);">{addon.description}</p>
                   </div>
                 ))}
