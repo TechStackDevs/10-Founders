@@ -2,7 +2,75 @@
 import { imageConfig } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 
+// Real projects - completed work with live URLs
 const projects = [
+  {
+    title: 'Consemble',
+    category: 'Web Application',
+    description: 'A gamified activity discovery app that helps people disconnect from screens by suggesting fun quests, adventures, and experiences to try in the real world, with rewards and community sharing for completed activities.',
+    tags: ['React', 'Typescript', 'Nx', 'Bun', 'Tanstack Router','Prisma', 'Tauri', 'Capacitor', 'Vite', 'Tailwind'],
+    image: '/images/portfolio/consemble.png',
+    color: 'from-amber-500 to-orange-600',
+    url: 'https://consemble.app/',
+  },
+  {
+    title: 'Support Local',
+    category: 'Web Application',
+    description: 'Community marketplace platform for discovering and supporting local businesses, nonprofits, and events with interactive engagement features.',
+    tags: ['React', 'Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Tailwind', 'Clerk', 'AWS S3', 'Docker', 'Vercel'],
+    image: '/images/portfolio/support-local-cropped.png',
+    color: 'from-green-500 to-emerald-600',
+    url: 'https://supportlocalusa.com/',
+  },
+  {
+    title: 'Colors',
+    category: 'Web Application',
+    description: 'A color-mixing puzzle game.',
+    tags: ['React', 'Javascript', 'Tailwind', 'Node.js','Supabase', 'Capacitor', 'Android Studio', 'PostCSS', 'Vite', 'Git'],
+    image: '/images/portfolio/colors.png',
+    color: 'from-blue-600 to-cyan-500',
+    url: 'https://colors-game-teal.vercel.app/',
+  },
+  {
+    title: 'MicroHabit-Stacker',
+    category: 'Web Application',
+    description: ' A tiny, browser-only micro-habit tracker that helps you build consistency by letting you pick small daily habits, check them off, and earn streaks, XP, and badges — all stored locally with optional in-tab reminders and calendar export.',
+    tags: ['HTML5', 'CSS3', 'Javascript', 'Vercel', 'localStorage'],
+    image: '/images/portfolio/micro-habit-stacker.png',
+    color: 'from-pink-500 to-rose-600',
+    url: 'https://microhabit-stacker.vercel.app/',
+  },
+  {
+    title: 'ScriptHammer',
+    category: 'Web Application',
+    description: ' A fully featured web application starter for building production-ready apps on Next.js (v15.5).',
+    tags: ['Next.js','React', 'Typescript', 'Tailwind','Supabase', 'PostgreSQL','Playwright', 'Docker', 'Stripe', 'Github'],
+    image: '/images/portfolio/scripthammer.png',
+    color: 'from-green-500 to-emerald-600',
+    url: 'https://scripthammer.com/',
+  },
+  {
+    title: 'Budget Buddy',
+    category: 'Web Application',
+    description: 'A personal budget management web app.',
+    tags: ['React', 'Typescript', 'Tailwind', 'Radix UI','Vite', 'ESLint', 'React Router', 'Lucide React', 'localStorage'],
+    image: '/images/portfolio/budget-buddy.png',
+    color: 'from-violet-600 to-purple-600',
+    url: 'https://budget-buddy-7t4p.vercel.app/',
+  },
+  {
+    title: 'The Free Range Dev',
+    category: 'Website',
+    description: 'A Link Hub Website for a Developer Community.',
+    tags: ['React', 'Javascript', 'Tailwind', 'Node.js','Supabase', 'Capacitor', 'Android Studio', 'PostCSS', 'Vite', 'Git'],
+    image: '/images/portfolio/free-range-dev.png',
+    color: 'from-amber-500 to-orange-600',
+    url: 'https://thefreerangedev.com/',
+  },
+];
+
+// Example project concepts - showcasing what we can build
+const conceptProjects = [
   {
     title: 'FinFlow Dashboard',
     category: 'Web Application',
@@ -51,70 +119,6 @@ const projects = [
     image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop',
     color: 'from-pink-500 to-rose-600',
   },
-  {
-    title: 'Consemble',
-    category: 'Web Application',
-    description: 'A gamified activity discovery app that helps people disconnect from screens by suggesting fun quests, adventures, and experiences to try in the real world, with rewards and community sharing for completed activities.',
-    tags: ['React', 'Typescript', 'Nx', 'Bun', 'Tanstack Router','Prisma', 'Tauri', 'Capacitor', 'Vite', 'Tailwind'],
-    image: '/images/portfolio/consemble.png',
-    color: 'from-amber-500 to-orange-600',
-    url: 'https://consemble.app/',
-  },
-  {
-    title: 'Support Local',
-    category: 'Web Application',
-    description: 'Community marketplace platform for discovering and supporting local businesses, nonprofits, and events with interactive engagement features.',
-    tags: ['React', 'Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Tailwind', 'Clerk', 'AWS S3', 'Docker', 'Vercel'],
-    image: '/images/portfolio/support-local-cropped.png',
-    color: 'from-green-500 to-emerald-600',
-    url: 'https://supportlocalusa.com/',
-  },
-  {
-    title: 'Colors',
-    category: 'Web Application',
-    description: 'A color-mixing puzzle game.',
-    tags: ['React', 'Javascript', 'Tailwind', 'Node.js','Supabase', 'Capacitor', 'Android Studio', 'PostCSS', 'Vite', 'Git'],
-    image: '/images/portfolio/colors.png',
-    color: 'from-blue-600 to-cyan-500',
-    url: 'https://colors-game-teal.vercel.app/',
-  },
-
-  {
-    title: 'MicroHabit-Stacker',
-    category: 'Web Application',
-    description: ' A tiny, browser-only micro-habit tracker that helps you build consistency by letting you pick small daily habits, check them off, and earn streaks, XP, and badges — all stored locally with optional in-tab reminders and calendar export.',
-    tags: ['HTML5', 'CSS3', 'Javascript', 'Vercel', 'localStorage'],
-    image: '/images/portfolio/micro-habit-stacker.png',
-    color: 'from-pink-500 to-rose-600',
-    url: 'https://microhabit-stacker.vercel.app/',
-  },
-  {
-    title: 'Budget Buddy',
-    category: 'Web Application',
-    description: 'A personal budget management web app.',
-    tags: ['React', 'Typescript', 'Tailwind', 'Radix UI','Vite', 'ESLint', 'React Router', 'Lucide React', 'localStorage'],
-    image: '/images/portfolio/budget-buddy.png',
-    color: 'from-violet-600 to-purple-600',
-    url: 'https://budget-buddy-7t4p.vercel.app/',
-  },
-  {
-    title: 'The Free Range Dev',
-    category: 'Website',
-    description: 'A Link Hub Website for a Developer Community.',
-    tags: ['React', 'Javascript', 'Tailwind', 'Node.js','Supabase', 'Capacitor', 'Android Studio', 'PostCSS', 'Vite', 'Git'],
-    image: '/images/portfolio/free-range-dev.png',
-    color: 'from-amber-500 to-orange-600',
-    url: 'https://thefreerangedev.com/',
-  },
-  {
-    title: 'ScriptHammer',
-    category: 'Web Application',
-    description: ' A fully featured web application starter for building production-ready apps on Next.js (v15.5).',
-    tags: ['Next.js','React', 'Typescript', 'Tailwind','Supabase', 'PostgreSQL','Playwright', 'Docker', 'Stripe', 'Github'],
-    image: '/images/portfolio/scripthammer.png',
-    color: 'from-green-500 to-emerald-600',
-    url: 'https://scripthammer.com/',
-  },
 ];
 
 const testimonials = [
@@ -160,110 +164,130 @@ const testimonials = [
     </div>
   </section>
 
-  <!-- Projects Grid -->
+  <!-- Projects Grid - Real Projects -->
   <section class="py-16" style="background-color: var(--bg-secondary);">
     <div class="container mx-auto px-4">
       <div class="max-w-7xl mx-auto">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            project.url ? (
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="group rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 block"
-                style={`background-color: var(--card-bg); box-shadow: var(--card-shadow); animation: fadeInUp 0.6s ease-out ${index * 0.1}s backwards;`}
-              >
-                <!-- Project Image -->
-                <div class="relative h-56 overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div class={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-0 group-hover:opacity-70 transition-opacity duration-300`}></div>
-                  <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span class="px-6 py-3 bg-white text-gray-900 rounded-full font-semibold text-sm shadow-lg">
-                      Visit Site
-                    </span>
-                  </div>
-                  <!-- Category Badge -->
-                  <div class="absolute top-4 left-4">
-                    <span class={`px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${project.color} text-white`}>
-                      {project.category}
-                    </span>
-                  </div>
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 block"
+              style={`background-color: var(--card-bg); box-shadow: var(--card-shadow); animation: fadeInUp 0.6s ease-out ${index * 0.1}s backwards;`}
+            >
+              <!-- Project Image -->
+              <div class="relative h-56 overflow-hidden">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div class={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-0 group-hover:opacity-70 transition-opacity duration-300`}></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span class="px-6 py-3 bg-white text-gray-900 rounded-full font-semibold text-sm shadow-lg">
+                    Visit Site
+                  </span>
                 </div>
-                
-                <!-- Project Info -->
-                <div class="p-6">
-                  <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">
-                    {project.title}
-                  </h3>
-                  <p class="text-sm mb-4 line-clamp-2" style="color: var(--text-secondary);">
-                    {project.description}
-                  </p>
-                  <!-- Tags -->
-                  <div class="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span 
-                        class="px-2 py-1 rounded-md text-xs font-medium"
-                        style="background-color: var(--bg-secondary); color: var(--text-muted);"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </a>
-            ) : (
-              <div
-                class="group rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2"
-                style={`background-color: var(--card-bg); box-shadow: var(--card-shadow); animation: fadeInUp 0.6s ease-out ${index * 0.1}s backwards;`}
-              >
-                <!-- Project Image -->
-                <div class="relative h-56 overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div class={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-0 group-hover:opacity-70 transition-opacity duration-300`}></div>
-                  <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span class="px-6 py-3 bg-white text-gray-900 rounded-full font-semibold text-sm shadow-lg">
-                      View Details
-                    </span>
-                  </div>
-                  <!-- Category Badge -->
-                  <div class="absolute top-4 left-4">
-                    <span class={`px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${project.color} text-white`}>
-                      {project.category}
-                    </span>
-                  </div>
-                </div>
-                
-                <!-- Project Info -->
-                <div class="p-6">
-                  <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">
-                    {project.title}
-                  </h3>
-                  <p class="text-sm mb-4 line-clamp-2" style="color: var(--text-secondary);">
-                    {project.description}
-                  </p>
-                  <!-- Tags -->
-                  <div class="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span 
-                        class="px-2 py-1 rounded-md text-xs font-medium"
-                        style="background-color: var(--bg-secondary); color: var(--text-muted);"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                <!-- Category Badge -->
+                <div class="absolute top-4 left-4">
+                  <span class={`px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${project.color} text-white`}>
+                    {project.category}
+                  </span>
                 </div>
               </div>
-            )
+              
+              <!-- Project Info -->
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">
+                  {project.title}
+                </h3>
+                <p class="text-sm mb-4 line-clamp-2" style="color: var(--text-secondary);">
+                  {project.description}
+                </p>
+                <!-- Tags -->
+                <div class="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span 
+                      class="px-2 py-1 rounded-md text-xs font-medium"
+                      style="background-color: var(--bg-secondary); color: var(--text-muted);"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Example Project Concepts Section -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">
+            What We Can Build
+          </h2>
+          <p class="text-lg max-w-2xl mx-auto" style="color: var(--text-secondary);">
+            Example project concepts showcasing the types of applications we can create for you
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {conceptProjects.map((project, index) => (
+            <a
+              href="/contact"
+              class="group rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 block"
+              style={`background-color: var(--card-bg); box-shadow: var(--card-shadow); animation: fadeInUp 0.6s ease-out ${index * 0.1}s backwards;`}
+            >
+              <!-- Project Image -->
+              <div class="relative h-56 overflow-hidden">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div class={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-0 group-hover:opacity-70 transition-opacity duration-300`}></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span class="px-6 py-3 bg-white text-gray-900 rounded-full font-semibold text-sm shadow-lg">
+                    Let's Build This
+                  </span>
+                </div>
+                <!-- Category Badge -->
+                <div class="absolute top-4 left-4">
+                  <span class={`px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${project.color} text-white`}>
+                    {project.category}
+                  </span>
+                </div>
+              </div>
+              
+              <!-- Project Info -->
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">
+                  {project.title}
+                </h3>
+                <p class="text-sm mb-4 line-clamp-2" style="color: var(--text-secondary);">
+                  {project.description}
+                </p>
+                <!-- Tags -->
+                <div class="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span 
+                      class="px-2 py-1 rounded-md text-xs font-medium"
+                      style="background-color: var(--bg-secondary); color: var(--text-muted);"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </a>
           ))}
         </div>
       </div>

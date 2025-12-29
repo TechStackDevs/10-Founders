@@ -1,58 +1,232 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const pricingPlans = [
+// Package Anchors - Quick overview
+const packageAnchors = [
   {
-    name: 'Starter',
-    description: 'Perfect for small projects and MVPs',
-    price: 'Custom',
-    features: [
-      'Single page applications',
-      'Basic responsive design',
-      'Standard deployment',
-      '30-day support included',
-      'Source code ownership',
+    category: 'Websites',
+    icon: '🌐',
+    items: [
+      { name: 'Starter Website (1–3 pages)', price: 'From $1,500' },
+      { name: 'Business Website (5–8 pages)', price: 'From $3,500' },
+      { name: 'Custom Website', price: 'From $5,000+' },
     ],
-    highlighted: false,
   },
   {
-    name: 'Professional',
-    description: 'For growing businesses with bigger needs',
-    price: 'Custom',
-    features: [
-      'Multi-page applications',
-      'Custom UI/UX design',
-      'Database integration',
-      'API development',
-      'Authentication system',
-      '90-day support included',
-      'Performance optimization',
+    category: 'Web Apps',
+    icon: '⚙️',
+    items: [
+      { name: 'MVP Web App', price: 'From $6,000' },
+      { name: 'Full-Stack App', price: '$8,000 – $20,000' },
+      { name: 'Enterprise Systems', price: 'Custom Quote' },
     ],
-    highlighted: true,
   },
   {
-    name: 'Enterprise',
-    description: 'Full-scale solutions for established companies',
-    price: 'Custom',
-    features: [
-      'Complex applications',
-      'Advanced integrations',
-      'Scalable architecture',
-      'Security hardening',
-      'Load testing',
-      'Priority 24/7 support',
-      'Dedicated account manager',
-      'Custom SLA',
+    category: 'Mobile Apps',
+    icon: '📱',
+    items: [
+      { name: 'Simple Mobile App', price: 'From $6,000' },
+      { name: 'Full-Featured App', price: '$8,000 – $12,000' },
+      { name: 'Enterprise Mobile', price: 'Custom Quote' },
     ],
-    highlighted: false,
+  },
+  {
+    category: 'E-commerce',
+    icon: '🛒',
+    items: [
+      { name: 'Basic Store Setup', price: 'From $3,000' },
+      { name: 'Custom E-commerce', price: '$5,000 – $10,000' },
+      { name: 'Marketplace Platform', price: 'Custom Quote' },
+    ],
+  },
+  {
+    category: 'AI & Automation',
+    icon: '🧠',
+    items: [
+      { name: 'AI Feature Integration', price: 'From $1,000' },
+      { name: 'Workflow Automation', price: 'From $2,000' },
+      { name: 'Custom AI Systems', price: 'Custom Scope' },
+    ],
+  },
+  {
+    category: 'Maintenance & Support',
+    icon: '🛠️',
+    items: [
+      { name: 'Monthly Maintenance', price: 'From $500/mo' },
+      { name: 'Priority Support', price: 'From $1,000/mo' },
+      { name: 'Enterprise SLA', price: 'Custom Quote' },
+    ],
   },
 ];
 
-const addons = [
-  { name: 'Ongoing Maintenance', description: 'Monthly retainer for updates and bug fixes' },
-  { name: 'SEO Package', description: 'Search engine optimization and analytics setup' },
-  { name: 'Mobile App', description: 'Companion mobile app for your web application' },
-  { name: 'Training Sessions', description: 'Team training for your new application' },
+// Website Packages
+const websitePackages = [
+  {
+    name: 'One-Page Site',
+    description: 'Single scrolling page — perfect for landing pages',
+    price: '$1,000 – $1,500',
+    hours: '10–15 hours',
+    features: ['Responsive design', 'Basic SEO setup', 'Contact form', 'Hosting guidance'],
+  },
+  {
+    name: '3-Page Site',
+    description: 'Home / About / Contact — ideal for small businesses',
+    price: '$1,500 – $2,000',
+    hours: '15–20 hours',
+    features: ['Responsive design', 'Basic SEO setup', 'Contact form', 'Hosting guidance'],
+  },
+  {
+    name: '5-Page Site',
+    description: 'Standard small business website',
+    price: '$2,000 – $3,000',
+    hours: '20–30 hours',
+    features: ['Responsive design', 'Basic SEO setup', 'Contact form', 'Hosting guidance'],
+  },
+  {
+    name: '7-Page Site',
+    description: 'Extended website with additional pages and features',
+    price: '$2,500 – $3,500',
+    hours: '25–35 hours',
+    features: ['Responsive design', 'Basic SEO setup', 'Contact form', 'Hosting guidance'],
+  },
+  {
+    name: 'CMS Site',
+    description: 'WordPress or headless CMS with editable pages',
+    price: '$3,000 – $4,000',
+    hours: '30–40 hours',
+    features: ['Admin panel', 'Content management', 'Responsive design', 'SEO optimization'],
+    highlighted: true,
+  },
+  {
+    name: 'Custom UI + CMS',
+    description: 'Custom design with full admin capabilities',
+    price: '$4,000 – $6,000',
+    hours: '40–60 hours',
+    features: ['Custom design', 'Admin panel', 'Advanced features', 'Performance tuning'],
+  },
+];
+
+// Full-Stack App Packages
+const appPackages = [
+  {
+    name: 'MVP App',
+    description: 'Auth + CRUD + basic UI — perfect for startups',
+    price: '$6,000 – $8,000',
+    hours: '60–80 hours',
+    features: ['User authentication', 'Database integration', 'Basic dashboard', 'Responsive UI'],
+  },
+  {
+    name: 'Advanced App',
+    description: 'Roles, dashboards, APIs — for growing businesses',
+    price: '$8,000 – $12,000',
+    hours: '80–120 hours',
+    features: ['Role-based access', 'Advanced dashboards', 'API integrations', 'Performance optimization'],
+    highlighted: true,
+  },
+  {
+    name: 'Enterprise App',
+    description: 'Complex logic + integrations — full-scale solutions',
+    price: '$12,000 – $20,000+',
+    hours: '120–200 hours',
+    features: ['Complex business logic', 'Third-party integrations', 'Scalable architecture', 'Security hardening'],
+  },
+];
+
+// Mobile App Packages
+const mobilePackages = [
+  {
+    name: 'Simple Mobile App',
+    description: 'Basic React Native / Expo app with core features',
+    price: '$6,000 – $8,000',
+    hours: '60–80 hours',
+    features: ['iOS & Android support', 'Basic UI/UX', 'API integration', 'App Store deployment'],
+  },
+  {
+    name: 'Full-Featured Mobile App',
+    description: 'Advanced features, offline support, push notifications',
+    price: '$8,000 – $12,000',
+    hours: '80–120 hours',
+    features: ['Offline-first architecture', 'Push notifications', 'Advanced UI/UX', 'Native features'],
+    highlighted: true,
+  },
+  {
+    name: 'Enterprise Mobile App',
+    description: 'Complex integrations, custom native modules, enterprise security',
+    price: '$12,000 – $20,000+',
+    hours: '120–200+ hours',
+    features: ['Custom native modules', 'Enterprise security', 'Complex integrations', 'White-label options'],
+  },
+];
+
+// AI Integration Packages
+const aiPackages = [
+  {
+    name: 'AI Starter',
+    description: 'Plug-and-play AI for small businesses & MVPs',
+    price: '$1,000 – $2,000',
+    hours: '10–20 hours',
+    features: ['Chatbot integration', 'Content generation', 'Basic AI search', 'Prompt engineering'],
+    examples: 'Chatbots, AI contact forms, content generation',
+  },
+  {
+    name: 'AI Enhanced',
+    description: 'Business logic aware AI for dashboards & workflows',
+    price: '$2,000 – $4,000',
+    hours: '20–40 hours',
+    features: ['Context-aware prompts', 'Workflow automation', 'Smart recommendations', 'Error handling'],
+    examples: 'AI copilots, CRM summarization, smart workflows',
+    highlighted: true,
+  },
+  {
+    name: 'AI Advanced',
+    description: 'Data + reasoning for SaaS & decision systems',
+    price: '$4,000 – $8,000',
+    hours: '40–80 hours',
+    features: ['Vector database setup', 'RAG implementation', 'Multi-step reasoning', 'Monitoring & logging'],
+    examples: 'RAG systems, AI agents, AI analytics',
+  },
+  {
+    name: 'AI Custom / Enterprise',
+    description: 'Proprietary workflows & complex systems',
+    price: '$8,000 – $15,000+',
+    hours: '80–150+ hours',
+    features: ['Architecture design', 'Model fine-tuning', 'Advanced safeguards', 'Documentation & training'],
+    examples: 'Fine-tuned models, multi-agent systems, compliance AI',
+  },
+];
+
+// Add-ons organized by category (3 balanced categories)
+const addonCategories = [
+  {
+    title: 'Growth & Marketing',
+    icon: '📈',
+    addons: [
+      { name: 'SEO Setup (Basic)', price: '$500 – $1,000', hours: '5–10 hours', description: 'Keyword research, optimization, analytics setup' },
+      { name: 'SEO Advanced', price: '$1,500 – $2,500', hours: '15–25 hours', description: 'Technical audits, content strategy, and optimization' },
+      { name: 'Social Media Setup', price: '$500 – $800', hours: '5–8 hours', description: 'Setup and branding for 3 platforms' },
+      { name: 'Content Strategy Session', price: '$500', hours: '5 hours', description: 'Strategic planning for your content marketing' },
+    ],
+  },
+  {
+    title: 'Tech & AI Integrations',
+    icon: '🔌',
+    addons: [
+      { name: 'API Integration', price: '$1,000 – $2,000', hours: '10–20 hours', description: 'Connect to third-party services and APIs' },
+      { name: 'AI Integration', price: '$1,500 – $3,000', hours: '15–30 hours', description: 'Add AI capabilities to existing projects' },
+      { name: 'Prompt Optimization', price: '$500', hours: '5 hours', description: 'Improve AI response quality and consistency' },
+      { name: 'AI Cost Optimization', price: '$500 – $1,000', hours: '5–10 hours', description: 'Reduce API costs without sacrificing quality' },
+    ],
+  },
+  {
+    title: 'Training & Maintenance',
+    icon: '🎓',
+    addons: [
+      { name: '1-Hour Training Session', price: '$150', hours: 'Live', description: 'One-on-one training for your team' },
+      { name: '5-Session Training Pack', price: '$700', hours: 'Live + recorded', description: 'Comprehensive training program' },
+      { name: 'Monthly Maintenance', price: '$500 – $1,500/mo', hours: 'Ongoing', description: 'Updates, bug fixes, and support' },
+      { name: 'Monthly AI Support', price: '$500 – $2,000/mo', hours: 'Ongoing', description: 'Ongoing AI maintenance and improvements' },
+    ],
+  },
 ];
 ---
 
@@ -63,61 +237,37 @@ const addons = [
     <div class="container mx-auto px-4 relative">
       <div class="max-w-3xl mx-auto text-center">
         <h1 class="text-5xl md:text-6xl font-bold mb-6 gradient-text">
-          Simple, Transparent Pricing
+          Transparent Pricing
         </h1>
         <p class="text-xl" style="color: var(--text-secondary);">
-          Every project is unique. We provide custom quotes based on your specific requirements. No hidden fees, no surprises.
+          Fixed-fee packages based on scope, complexity, and timeline. Cost certainty with no surprise billing.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Pricing Cards -->
-  <section class="py-20" style="background-color: var(--bg-secondary);">
+  <!-- Package Anchors - Quick Overview -->
+  <section class="py-16" style="background-color: var(--bg-secondary);">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
-        <div class="grid md:grid-cols-3 gap-8">
-          {pricingPlans.map((plan) => (
-            <div class="p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1 relative gradient-bg text-white">
-              {plan.highlighted && (
-                <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-white text-primary-600 text-sm font-semibold rounded-full shadow-lg">
-                  Most Popular
-                </div>
-              )}
-              <div class="text-center mb-8">
-                <h3 class="text-2xl font-bold mb-2 text-white">
-                  {plan.name}
-                </h3>
-                <p class="mb-4 text-blue-100">
-                  {plan.description}
-                </p>
-                <div class="text-4xl font-bold text-white">
-                  {plan.price}
-                </div>
-                <p class="text-sm text-blue-100">
-                  Based on project scope
-                </p>
-              </div>
-              
-              <ul class="space-y-3 mb-8">
-                {plan.features.map((feature) => (
-                  <li class="flex items-start gap-3">
-                    <svg class="w-5 h-5 mt-0.5 flex-shrink-0 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span class="text-blue-50">
-                      {feature}
-                    </span>
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--text-primary);">
+            Quick Overview
+          </h2>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {packageAnchors.map((anchor) => (
+            <div class="p-6 rounded-2xl" style="background-color: var(--card-bg); box-shadow: var(--card-shadow);">
+              <div class="text-3xl mb-3">{anchor.icon}</div>
+              <h3 class="text-xl font-bold mb-4" style="color: var(--text-primary);">{anchor.category}</h3>
+              <ul class="space-y-3">
+                {anchor.items.map((item) => (
+                  <li class="flex justify-between items-start gap-2">
+                    <span class="text-sm" style="color: var(--text-secondary);">{item.name}</span>
+                    <span class="text-sm font-semibold whitespace-nowrap text-primary-500">{item.price}</span>
                   </li>
                 ))}
               </ul>
-
-              <a 
-                href="/contact" 
-                class="block w-full text-center py-3 rounded-xl font-semibold transition-colors bg-white text-primary-600 hover:bg-blue-50"
-              >
-                Get a Quote
-              </a>
             </div>
           ))}
         </div>
@@ -125,47 +275,287 @@ const addons = [
     </div>
   </section>
 
-  <!-- Add-ons -->
-  <section class="py-20">
+  <!-- Website Packages -->
+  <section class="py-16">
     <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
+      <div class="max-w-6xl mx-auto">
         <div class="text-center mb-12">
-          <h2 class="text-4xl md:text-5xl font-bold mb-4" style="color: var(--text-primary);">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">
+            🌐 Website Packages
+          </h2>
+          <p class="text-lg" style="color: var(--text-secondary);">
+            From simple landing pages to dynamic CMS-powered sites
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {websitePackages.map((pkg) => (
+            <div class={`p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1 relative ${pkg.highlighted ? 'gradient-bg text-white' : ''}`} style={!pkg.highlighted ? 'background-color: var(--card-bg); box-shadow: var(--card-shadow);' : ''}>
+              {pkg.highlighted && (
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-white text-primary-600 text-xs font-semibold rounded-full shadow-lg">
+                  Popular
+                </div>
+              )}
+              <h3 class={`text-xl font-bold mb-1 ${pkg.highlighted ? 'text-white' : ''}`} style={!pkg.highlighted ? 'color: var(--text-primary);' : ''}>
+                {pkg.name}
+              </h3>
+              <div class={`text-2xl font-bold mb-2 ${pkg.highlighted ? 'text-white' : 'text-primary-500'}`}>
+                {pkg.price}
+              </div>
+              <div class={`text-sm mb-3 ${pkg.highlighted ? 'text-blue-100' : ''}`} style={!pkg.highlighted ? 'color: var(--text-muted);' : ''}>
+                {pkg.hours}
+              </div>
+              <p class={`text-sm mb-4 ${pkg.highlighted ? 'text-blue-100' : ''}`} style={!pkg.highlighted ? 'color: var(--text-secondary);' : ''}>
+                {pkg.description}
+              </p>
+              <ul class="space-y-2">
+                {pkg.features.map((feature) => (
+                  <li class="flex items-start gap-2 text-sm">
+                    <svg class={`w-4 h-4 mt-0.5 flex-shrink-0 ${pkg.highlighted ? 'text-blue-200' : 'text-primary-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class={pkg.highlighted ? 'text-blue-50' : ''} style={!pkg.highlighted ? 'color: var(--text-secondary);' : ''}>
+                      {feature}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Full-Stack App Packages -->
+  <section class="py-16" style="background-color: var(--bg-secondary);">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">
+            ⚙️ Full-Stack App Packages
+          </h2>
+          <p class="text-lg" style="color: var(--text-secondary);">
+            From MVPs to enterprise-grade applications
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          {appPackages.map((pkg) => (
+            <div class={`p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1 relative ${pkg.highlighted ? 'gradient-bg text-white' : ''}`} style={!pkg.highlighted ? 'background-color: var(--card-bg); box-shadow: var(--card-shadow);' : ''}>
+              {pkg.highlighted && (
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-white text-primary-600 text-xs font-semibold rounded-full shadow-lg">
+                  Popular
+                </div>
+              )}
+              <h3 class={`text-xl font-bold mb-1 ${pkg.highlighted ? 'text-white' : ''}`} style={!pkg.highlighted ? 'color: var(--text-primary);' : ''}>
+                {pkg.name}
+              </h3>
+              <div class={`text-2xl font-bold mb-2 ${pkg.highlighted ? 'text-white' : 'text-primary-500'}`}>
+                {pkg.price}
+              </div>
+              <div class={`text-sm mb-3 ${pkg.highlighted ? 'text-blue-100' : ''}`} style={!pkg.highlighted ? 'color: var(--text-muted);' : ''}>
+                {pkg.hours}
+              </div>
+              <p class={`text-sm mb-4 ${pkg.highlighted ? 'text-blue-100' : ''}`} style={!pkg.highlighted ? 'color: var(--text-secondary);' : ''}>
+                {pkg.description}
+              </p>
+              <ul class="space-y-2">
+                {pkg.features.map((feature) => (
+                  <li class="flex items-start gap-2 text-sm">
+                    <svg class={`w-4 h-4 mt-0.5 flex-shrink-0 ${pkg.highlighted ? 'text-blue-200' : 'text-primary-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class={pkg.highlighted ? 'text-blue-50' : ''} style={!pkg.highlighted ? 'color: var(--text-secondary);' : ''}>
+                      {feature}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mobile App Packages -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">
+            📱 Mobile App Packages
+          </h2>
+          <p class="text-lg" style="color: var(--text-secondary);">
+            iOS and Android apps built with React Native and Expo
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          {mobilePackages.map((pkg) => (
+            <div class={`p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1 relative ${pkg.highlighted ? 'gradient-bg text-white' : ''}`} style={!pkg.highlighted ? 'background-color: var(--card-bg); box-shadow: var(--card-shadow);' : ''}>
+              {pkg.highlighted && (
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-white text-primary-600 text-xs font-semibold rounded-full shadow-lg">
+                  Popular
+                </div>
+              )}
+              <h3 class={`text-xl font-bold mb-1 ${pkg.highlighted ? 'text-white' : ''}`} style={!pkg.highlighted ? 'color: var(--text-primary);' : ''}>
+                {pkg.name}
+              </h3>
+              <div class={`text-2xl font-bold mb-2 ${pkg.highlighted ? 'text-white' : 'text-primary-500'}`}>
+                {pkg.price}
+              </div>
+              <div class={`text-sm mb-3 ${pkg.highlighted ? 'text-blue-100' : ''}`} style={!pkg.highlighted ? 'color: var(--text-muted);' : ''}>
+                {pkg.hours}
+              </div>
+              <p class={`text-sm mb-4 ${pkg.highlighted ? 'text-blue-100' : ''}`} style={!pkg.highlighted ? 'color: var(--text-secondary);' : ''}>
+                {pkg.description}
+              </p>
+              <ul class="space-y-2">
+                {pkg.features.map((feature) => (
+                  <li class="flex items-start gap-2 text-sm">
+                    <svg class={`w-4 h-4 mt-0.5 shrink-0 ${pkg.highlighted ? 'text-blue-200' : 'text-primary-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class={pkg.highlighted ? 'text-blue-50' : ''} style={!pkg.highlighted ? 'color: var(--text-secondary);' : ''}>
+                      {feature}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Integration Packages -->
+  <section class="py-16" style="background-color: var(--bg-secondary);">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">
+            🧠 AI Integration Packages
+          </h2>
+          <p class="text-lg" style="color: var(--text-secondary);">
+            From plug-and-play chatbots to custom AI systems
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {aiPackages.map((pkg) => (
+            <div class={`p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1 relative ${pkg.highlighted ? 'gradient-bg text-white' : ''}`} style={!pkg.highlighted ? 'background-color: var(--card-bg); box-shadow: var(--card-shadow);' : ''}>
+              {pkg.highlighted && (
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-white text-primary-600 text-xs font-semibold rounded-full shadow-lg">
+                  Popular
+                </div>
+              )}
+              <h3 class={`text-lg font-bold mb-1 ${pkg.highlighted ? 'text-white' : ''}`} style={!pkg.highlighted ? 'color: var(--text-primary);' : ''}>
+                {pkg.name}
+              </h3>
+              <div class={`text-xl font-bold mb-2 ${pkg.highlighted ? 'text-white' : 'text-primary-500'}`}>
+                {pkg.price}
+              </div>
+              <div class={`text-xs mb-3 ${pkg.highlighted ? 'text-blue-100' : ''}`} style={!pkg.highlighted ? 'color: var(--text-muted);' : ''}>
+                {pkg.hours}
+              </div>
+              <p class={`text-sm mb-3 ${pkg.highlighted ? 'text-blue-100' : ''}`} style={!pkg.highlighted ? 'color: var(--text-secondary);' : ''}>
+                {pkg.description}
+              </p>
+              <ul class="space-y-1 mb-3">
+                {pkg.features.map((feature) => (
+                  <li class="flex items-start gap-2 text-xs">
+                    <svg class={`w-3 h-3 mt-0.5 flex-shrink-0 ${pkg.highlighted ? 'text-blue-200' : 'text-primary-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class={pkg.highlighted ? 'text-blue-50' : ''} style={!pkg.highlighted ? 'color: var(--text-secondary);' : ''}>
+                      {feature}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <div class={`text-xs italic ${pkg.highlighted ? 'text-blue-200' : ''}`} style={!pkg.highlighted ? 'color: var(--text-muted);' : ''}>
+                e.g., {pkg.examples}
+              </div>
+            </div>
+          ))}
+        </div>
+        <!-- AI API Cost Note -->
+        <div class="mt-8 p-4 rounded-xl border border-primary-500/30 bg-primary-500/5 text-center">
+          <p class="text-sm" style="color: var(--text-secondary);">
+            <strong class="text-primary-600 dark:text-primary-400">Note:</strong> Package prices cover AI integration and setup. Ongoing AI API costs (OpenAI, Anthropic, etc.) are included in our maintenance plans, or you can manage them directly.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Add-ons Section -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--text-primary);">
             Optional Add-ons
           </h2>
-          <p class="text-xl" style="color: var(--text-secondary);">
+          <p class="text-lg" style="color: var(--text-secondary);">
             Enhance your project with additional services
           </p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-6">
-          {addons.map((addon) => (
-            <div class="p-6 rounded-xl border transition-all duration-300 hover:border-primary-300 dark:hover:border-primary-600" style="background-color: var(--card-bg); border-color: var(--border-color);">
-              <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">{addon.name}</h3>
-              <p style="color: var(--text-secondary);">{addon.description}</p>
+        <div class="grid md:grid-cols-3 gap-8">
+          {addonCategories.map((category) => (
+            <div class="space-y-4">
+              <h3 class="text-xl font-bold flex items-center gap-2" style="color: var(--text-primary);">
+                <span>{category.icon}</span> {category.title}
+              </h3>
+              <div class="space-y-3">
+                {category.addons.map((addon) => (
+                  <div class="p-4 rounded-xl border transition-all duration-300 hover:border-primary-300 dark:hover:border-primary-600" style="background-color: var(--card-bg); border-color: var(--border-color);">
+                    <div class="flex justify-between items-start mb-1">
+                      <h4 class="font-semibold" style="color: var(--text-primary);">{addon.name}</h4>
+                      <span class="text-sm font-bold text-primary-500 whitespace-nowrap ml-2">{addon.price}</span>
+                    </div>
+                    <div class="text-xs mb-1" style="color: var(--text-muted);">{addon.hours}</div>
+                    <p class="text-sm" style="color: var(--text-secondary);">{addon.description}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Philosophy Note -->
+  <section class="py-8">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="p-4 rounded-xl border border-primary-500/30 bg-primary-500/5 text-center">
+          <p class="text-sm" style="color: var(--text-secondary);">
+            <strong class="text-primary-600 dark:text-primary-400">We believe in transparent, fair pricing based on effort and complexity — not inflated retainers or surprise fees. Final pricing depends on scope, integrations, and timeline.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FAQ Section -->
-  <section class="py-20" style="background-color: var(--bg-secondary);">
+  <section class="py-16" style="background-color: var(--bg-secondary);">
     <div class="container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
         <div class="text-center mb-12">
-          <h2 class="text-4xl md:text-5xl font-bold mb-4" style="color: var(--text-primary);">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--text-primary);">
             Frequently Asked Questions
           </h2>
         </div>
 
         <div class="space-y-6">
           {[
-            { q: 'How do you determine pricing?', a: 'We base our quotes on project complexity, timeline, and required features. After our initial consultation, we provide a detailed proposal with transparent pricing.' },
+            { q: 'How do you determine final pricing?', a: 'We price projects as fixed-fee packages based on scope, complexity, and timeline. This gives you cost certainty and protects you from surprise billing. If scope changes during the project, we revise the quote before continuing.' },
             { q: 'What payment terms do you offer?', a: 'Typically, we work with a 50% deposit to start, with the remainder due upon completion. For larger projects, we can arrange milestone-based payments.' },
-            { q: 'Do you offer ongoing support?', a: 'Yes! All plans include initial support. We also offer monthly maintenance packages for long-term partnerships.' },
-            { q: 'How long does a typical project take?', a: 'Timeline varies based on scope. A simple website might take 2-4 weeks, while a complex application could be 3-6 months. We provide accurate estimates during planning.' },
+            { q: 'Do you offer ongoing support?', a: 'Yes! All projects include initial support. We also offer monthly maintenance packages starting at $500/month for long-term partnerships.' },
+            { q: 'How long does a typical project take?', a: 'Timeline varies based on scope. A simple website might take 2-4 weeks, while a complex application could be 3-6 months. We provide accurate estimates during our discovery phase.' },
+            { q: 'What if my project doesn\'t fit these packages?', a: 'These packages are starting points. We customize every quote based on your specific needs. Reach out and we\'ll create a tailored proposal.' },
           ].map((faq) => (
             <div class="p-6 rounded-xl" style="background-color: var(--card-bg); box-shadow: var(--card-shadow);">
               <h3 class="text-lg font-bold mb-2" style="color: var(--text-primary);">{faq.q}</h3>
@@ -186,7 +576,7 @@ const addons = [
           Ready to Get Started?
         </h2>
         <p class="text-xl mb-10 text-blue-100">
-          Let's discuss your project and provide a custom quote tailored to your needs.
+          Let's discuss your project and create a custom proposal tailored to your needs.
         </p>
         <a href="/contact" class="inline-block bg-white text-primary-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-50 transition-colors shadow-lg">
           Request a Quote
