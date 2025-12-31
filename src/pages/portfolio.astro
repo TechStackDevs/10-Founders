@@ -7,7 +7,7 @@ const projects = [
   {
     title: 'Consemble',
     category: 'Web Application',
-    description: 'A gamified activity discovery app that helps people disconnect from screens by suggesting fun quests, adventures, and experiences to try in the real world, with rewards and community sharing for completed activities.',
+    description: 'A gamified activity discovery SaaS platform that helps people disconnect from screens by suggesting fun quests, adventures, and experiences to try in the real world, with rewards and community sharing for completed activities.',
     tags: ['React', 'Typescript', 'Nx', 'Bun', 'Tanstack Router','Prisma', 'Tauri', 'Capacitor', 'Vite', 'Tailwind'],
     image: '/images/portfolio/consemble.png',
     color: 'from-amber-500 to-orange-600',
@@ -16,7 +16,7 @@ const projects = [
   {
     title: 'Support Local',
     category: 'Web Application',
-    description: 'Community marketplace platform for discovering and supporting local businesses, nonprofits, and events with interactive engagement features.',
+    description: 'A SaaS marketplace platform for discovering and supporting local businesses, nonprofits, and events with interactive engagement features.',
     tags: ['React', 'Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Tailwind', 'Clerk', 'AWS S3', 'Docker', 'Vercel'],
     image: '/images/portfolio/support-local-cropped.png',
     color: 'from-green-500 to-emerald-600',
@@ -25,16 +25,25 @@ const projects = [
   {
     title: 'Colors',
     category: 'Web Application',
-    description: 'A color-mixing puzzle game.',
+    description: 'An educational puzzle-game app that challenges players to fill a grid by applying Additive (RGB) and Subtractive (CMY) color-mixing rules. Players must use logic to deduce which colors belong in specific cells based on the "influencer" colors surrounding them, effectively teaching real-world color theory through gameplay.',
     tags: ['React', 'Javascript', 'Tailwind', 'Node.js','Supabase', 'Capacitor', 'Android Studio', 'PostCSS', 'Vite', 'Git'],
     image: '/images/portfolio/colors.png',
     color: 'from-blue-600 to-cyan-500',
     url: 'https://colors-game-teal.vercel.app/',
   },
   {
+    title: 'Disc Golf Courses',
+    category: 'Web Application',
+    description: 'A community-focused web application designed to help players discover local courses, read detailed reviews, and browse an extensive directory of disc golf locations by city or state.',
+    tags: ['Next.js', 'MongoDB', 'Node.js', 'Tailwind', 'Vercel'],
+    image: '/images/portfolio/disc-golf-courses.png',
+    color: 'from-violet-600 to-purple-600',
+    url: 'https://www.discgolfcourses.org/',
+  },
+  {
     title: 'MicroHabit-Stacker',
     category: 'Web Application',
-    description: ' A tiny, browser-only micro-habit tracker that helps you build consistency by letting you pick small daily habits, check them off, and earn streaks, XP, and badges — all stored locally with optional in-tab reminders and calendar export.',
+    description: 'A tiny, browser-only micro-habit tracker that helps you build consistency by letting you pick small daily habits, check them off, and earn streaks, XP, and badges — all stored locally with optional in-tab reminders and calendar export.',
     tags: ['HTML5', 'CSS3', 'Javascript', 'Vercel', 'localStorage'],
     image: '/images/portfolio/micro-habit-stacker.png',
     color: 'from-pink-500 to-rose-600',
@@ -43,29 +52,65 @@ const projects = [
   {
     title: 'ScriptHammer',
     category: 'Web Application',
-    description: ' A fully featured web application starter for building production-ready apps on Next.js (v15.5).',
+    description: 'A fully featured web application starter for building production-ready apps on Next.js (v15.5).',
     tags: ['Next.js','React', 'Typescript', 'Tailwind','Supabase', 'PostgreSQL','Playwright', 'Docker', 'Stripe', 'Github'],
     image: '/images/portfolio/scripthammer.png',
     color: 'from-green-500 to-emerald-600',
     url: 'https://scripthammer.com/',
   },
   {
-    title: 'Budget Buddy',
+    title: 'Medical Chart Interface',
     category: 'Web Application',
-    description: 'A personal budget management web app.',
-    tags: ['React', 'Typescript', 'Tailwind', 'Radix UI','Vite', 'ESLint', 'React Router', 'Lucide React', 'localStorage'],
-    image: '/images/portfolio/budget-buddy.png',
-    color: 'from-violet-600 to-purple-600',
-    url: 'https://budget-buddy-7t4p.vercel.app/',
+    description: 'A clinical tool for medical professionals to perform an Imaging Utilization Review.',
+    tags: ['Next.js', 'Tailwind', 'Lucide React', 'Vercel'],
+    image: '/images/portfolio/medical-chart-interface.png',
+    color: 'from-blue-600 to-cyan-500',
+    url: 'https://v0-medical-chart-interface.vercel.app/ ',
+  },
+  {
+    title: 'Viking Adventure',
+    category: 'Web Application',
+    description: 'An interactive role-playing web app that immerses players in a historical narrative where they make pivotal decisions for their community while managing resources and tracking their progress through a Viking village.',
+    tags: ['Next.js', 'Tailwind', 'Lucide React', 'Vercel'],
+    image: '/images/portfolio/viking-adventure.png',
+    color: 'from-amber-500 to-orange-600',
+    url: 'https://viking-adventure.vercel.app/scene/village_gathering',
   },
   {
     title: 'The Free Range Dev',
     category: 'Website',
-    description: 'A Link Hub Website for a Developer Community.',
-    tags: ['React', 'Javascript', 'Tailwind', 'Node.js','Supabase', 'Capacitor', 'Android Studio', 'PostCSS', 'Vite', 'Git'],
+    description: 'A community-driven web application and platform designed for developers and solopreneurs looking to build digital income streams and achieve lifestyle freedom.',
+    tags: ['Skool', 'Next.js', 'Tailwind', 'Vercel', 'Social Media'],
     image: '/images/portfolio/free-range-dev.png',
-    color: 'from-amber-500 to-orange-600',
+    color: 'from-violet-600 to-purple-600',
     url: 'https://thefreerangedev.com/',
+  },
+  {
+    title: 'Ironman Training Tool',
+    category: 'Web Application',
+    description: 'A performance-tracking web app that allows endurance athletes to input their swim, bike, and run paces to instantly project their total race time against official cutoffs and determine their highest training priorities.',
+    tags: ['Next.js', 'Tailwind', 'Lucide React', 'Vercel'],
+    image: '/images/portfolio/ironman.png',
+    color: 'from-pink-500 to-rose-600',
+    url: 'https://v0-ironman-training-tool.vercel.app/',
+  },
+  {
+    title: 'Budget Buddy',
+    category: 'Web Application',
+    description: 'A personal finance tracker and budgeting tool designed to help users manage their income, track expenses, and set savings goals.',
+    tags: ['React', 'Typescript', 'Tailwind', 'Radix UI','Vite', 'ESLint', 'React Router', 'Lucide React', 'localStorage'],
+    image: '/images/portfolio/budget-buddy.png',
+    color: 'from-blue-600 to-cyan-500',
+    url: 'https://budget-buddy-7t4p.vercel.app/',
+  },
+  {
+    title: 'Strength Planner',
+    category: 'Web Application',
+    description: 'An interactive periodization tool that helps athletes transition through different training phases by providing specific movement guidelines and a searchable library to build customized workouts.',
+    tags: ['Next.js', 'Tailwind', 'Lucide React', 'Vercel'],
+    image: '/images/portfolio/strength-planner.png',
+    color: 'from-green-500 to-emerald-600',
+    url: 'https://strength-planner.vercel.app/',
   },
 ];
 
@@ -190,12 +235,13 @@ const testimonials = [
                     Visit Site
                   </span>
                 </div>
-                <!-- Category Badge -->
+                <!-- Category Badge - Commented out but kept for easy restoration
                 <div class="absolute top-4 left-4">
                   <span class={`px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${project.color} text-white`}>
                     {project.category}
                   </span>
                 </div>
+                -->
               </div>
               
               <!-- Project Info -->
@@ -308,11 +354,11 @@ const testimonials = [
             <div class="text-lg font-medium" style="color: var(--text-secondary);">Client Satisfaction</div>
           </div>
           <div class="text-center">
-            <div class="text-5xl md:text-6xl font-bold gradient-text mb-2">5+</div>
+            <div class="text-5xl md:text-6xl font-bold gradient-text mb-2">10+</div>
             <div class="text-lg font-medium" style="color: var(--text-secondary);">Years Experience</div>
           </div>
           <div class="text-center">
-            <div class="text-5xl md:text-6xl font-bold gradient-text mb-2">10+</div>
+            <div class="text-5xl md:text-6xl font-bold gradient-text mb-2">12+</div>
             <div class="text-lg font-medium" style="color: var(--text-secondary);">Industries Served</div>
           </div>
         </div>
