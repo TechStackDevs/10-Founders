@@ -1,5 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+// Commented out until we have real testimonials
+// const testimonials = [
+//   {
+//     quote: "Tech Stack Devs transformed our vision into a product that exceeded our expectations. Their attention to detail is remarkable.",
+//     author: "Sarah Chen",
+//     role: "CEO",
+//     avatar: "SC",
+//   },
+//   {
+//     quote: "Working with Tech Stack Devs was a game-changer. They delivered on time, on budget, and the quality speaks for itself.",
+//     author: "Marcus Johnson",
+//     role: "Founder",
+//     avatar: "MJ",
+//   },
+//   {
+//     quote: "The team's technical expertise and creative problem-solving made our complex project feel effortless.",
+//     author: "Emily Rodriguez",
+//     role: "CTO",
+//     avatar: "ER",
+//   },
+// ];
 ---
 
 <Layout title="Tech Stack Devs - App & Website Development">
@@ -95,6 +117,45 @@ import Layout from '../layouts/Layout.astro';
               Stunning websites optimized for conversions. SEO-ready and lightning fast.
             </p>
           </div>
+
+          <!-- SaaS -->
+          <div class="p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--card-bg); box-shadow: var(--card-shadow);">
+            <div class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-3" style="color: var(--text-primary);">SaaS Platforms</h3>
+            <p style="color: var(--text-secondary);">
+              Full-featured software-as-a-service products with subscriptions, multi-tenancy, and billing systems.
+            </p>
+          </div>
+
+          <!-- E-Commerce -->
+          <div class="p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--card-bg); box-shadow: var(--card-shadow);">
+            <div class="w-14 h-14 rounded-xl bg-accent-500/10 flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-accent-600 dark:text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-3" style="color: var(--text-primary);">E-Commerce</h3>
+            <p style="color: var(--text-secondary);">
+              Online stores and marketplaces that drive sales. Custom or platform-based solutions tailored to your needs.
+            </p>
+          </div>
+
+          <!-- AI & Automation -->
+          <div class="p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--card-bg); box-shadow: var(--card-shadow);">
+            <div class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-3" style="color: var(--text-primary);">AI & Automation</h3>
+            <p style="color: var(--text-secondary);">
+              Integrate AI capabilities and automate workflows to unlock new efficiencies and intelligent systems.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -149,8 +210,8 @@ import Layout from '../layouts/Layout.astro';
               <div style="color: var(--text-secondary);">Client Satisfaction</div>
             </div>
             <div class="p-6 rounded-2xl text-center" style="background-color: var(--bg-secondary);">
-              <div class="text-4xl font-bold text-primary-500 mb-2">5+</div>
-              <div style="color: var(--text-secondary);">Years Experience</div>
+              <div class="text-4xl font-bold text-primary-500 mb-2">10+</div>
+              <div style="color: var(--text-secondary);">Industries Served</div>
             </div>
             <div class="p-6 rounded-2xl text-center" style="background-color: var(--bg-secondary);">
               <div class="text-4xl font-bold text-accent-500 mb-2">24/7</div>
@@ -161,6 +222,54 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </section>
+
+  <!-- Testimonials - Commented out until we have real testimonials
+  <section class="py-20" style="background-color: var(--bg-secondary);">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4" style="color: var(--text-primary);">
+            Client Stories
+          </h2>
+          <p class="text-xl max-w-2xl mx-auto" style="color: var(--text-secondary);">
+            Don't just take our word for it — hear from the people we've worked with
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <div 
+              class="p-8 rounded-2xl relative"
+              style={`background-color: var(--card-bg); box-shadow: var(--card-shadow);`}
+            >
+              <div class="absolute -top-4 left-8">
+                <div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center">
+                  <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                  </svg>
+                </div>
+              </div>
+              
+              <p class="text-lg mb-6 mt-4 italic" style="color: var(--text-secondary);">
+                "{testimonial.quote}"
+              </p>
+              
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-white font-bold">
+                  {testimonial.avatar}
+                </div>
+                <div>
+                  <div class="font-semibold" style="color: var(--text-primary);">{testimonial.author}</div>
+                  <div class="text-sm" style="color: var(--text-muted);">{testimonial.role}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+  -->
 
   <!-- CTA Section -->
   <section class="py-24 relative overflow-hidden">

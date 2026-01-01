@@ -165,27 +165,6 @@ const conceptProjects = [
     color: 'from-pink-500 to-rose-600',
   },
 ];
-
-const testimonials = [
-  {
-    quote: "Tech Stack Devs transformed our vision into a product that exceeded our expectations. Their attention to detail is remarkable.",
-    author: "Sarah Chen",
-    role: "CEO",
-    avatar: "SC",
-  },
-  {
-    quote: "Working with Tech Stack Devs was a game-changer. They delivered on time, on budget, and the quality speaks for itself.",
-    author: "Marcus Johnson",
-    role: "Founder",
-    avatar: "MJ",
-  },
-  {
-    quote: "The team's technical expertise and creative problem-solving made our complex project feel effortless.",
-    author: "Emily Rodriguez",
-    role: "CTO",
-    avatar: "ER",
-  },
-];
 ---
 
 <Layout title="Portfolio - Tech Stack Devs">
@@ -354,99 +333,13 @@ const testimonials = [
             <div class="text-lg font-medium" style="color: var(--text-secondary);">Client Satisfaction</div>
           </div>
           <div class="text-center">
-            <div class="text-5xl md:text-6xl font-bold gradient-text mb-2">10+</div>
-            <div class="text-lg font-medium" style="color: var(--text-secondary);">Years Experience</div>
+            <div class="text-5xl md:text-6xl font-bold gradient-text mb-2">25+</div>
+            <div class="text-lg font-medium" style="color: var(--text-secondary);">Years Combined Experience</div>
           </div>
           <div class="text-center">
-            <div class="text-5xl md:text-6xl font-bold gradient-text mb-2">12+</div>
+            <div class="text-5xl md:text-6xl font-bold gradient-text mb-2">10+</div>
             <div class="text-lg font-medium" style="color: var(--text-secondary);">Industries Served</div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="py-20" style="background-color: var(--bg-secondary);">
-    <div class="container mx-auto px-4">
-      <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-4" style="color: var(--text-primary);">
-            Client Stories
-          </h2>
-          <p class="text-xl max-w-2xl mx-auto" style="color: var(--text-secondary);">
-            Don't just take our word for it — hear from the people we've worked with
-          </p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div 
-              class="p-8 rounded-2xl relative"
-              style={`background-color: var(--card-bg); box-shadow: var(--card-shadow); animation: fadeInUp 0.6s ease-out ${index * 0.15}s backwards;`}
-            >
-              <!-- Quote icon -->
-              <div class="absolute -top-4 left-8">
-                <div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center">
-                  <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                  </svg>
-                </div>
-              </div>
-              
-              <p class="text-lg mb-6 mt-4 italic" style="color: var(--text-secondary);">
-                "{testimonial.quote}"
-              </p>
-              
-              <div class="flex items-center gap-4">
-                <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-white font-bold">
-                  {testimonial.avatar}
-                </div>
-                <div>
-                  <div class="font-semibold" style="color: var(--text-primary);">{testimonial.author}</div>
-                  <div class="text-sm" style="color: var(--text-muted);">{testimonial.role}</div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Technologies Section -->
-  <section class="py-20">
-    <div class="container mx-auto px-4">
-      <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-4" style="color: var(--text-primary);">
-            Technologies We Use
-          </h2>
-          <p class="text-xl max-w-2xl mx-auto" style="color: var(--text-secondary);">
-            Modern tools and frameworks to build robust, scalable solutions
-          </p>
-        </div>
-
-        <div class="grid grid-cols-3 md:grid-cols-6 gap-8">
-          {[
-            { name: 'React', icon: '⚛️' },
-            { name: 'Node.js', icon: '🟢' },
-            { name: 'Python', icon: '🐍' },
-            { name: 'Capacitor', icon: '💙' },
-            { name: 'AWS', icon: '☁️' },
-            { name: 'PostgreSQL', icon: '🐘' },
-            { name: 'Next.js', icon: '▲' },
-            { name: 'TypeScript', icon: '📘' },
-            { name: 'Supabase', icon: '🔥' },
-            { name: 'Docker', icon: '🐳' },
-            { name: 'Clerk', icon: '◆' },
-            { name: 'Tailwind', icon: '🎨' },
-          ].map((tech) => (
-            <div class="flex flex-col items-center gap-2 p-4 rounded-xl transition-all duration-300 hover:scale-110 hover:shadow-lg" style="background-color: var(--bg-secondary);">
-              <span class="text-3xl">{tech.icon}</span>
-              <span class="text-sm font-medium" style="color: var(--text-secondary);">{tech.name}</span>
-            </div>
-          ))}
         </div>
       </div>
     </div>

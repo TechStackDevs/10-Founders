@@ -581,34 +581,6 @@ const addonCategories = [
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section class="py-16" style="background-color: var(--bg-secondary);">
-    <div class="container mx-auto px-4">
-      <div class="max-w-3xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--text-primary);">
-            Frequently Asked Questions
-          </h2>
-        </div>
-
-        <div class="space-y-6">
-          {[
-            { q: 'How do you determine final pricing?', a: 'We price projects as fixed-fee packages based on scope, complexity, and timeline. This gives you cost certainty and protects you from surprise billing. If scope changes during the project, we revise the quote before continuing.' },
-            { q: 'What payment terms do you offer?', a: 'Typically, we work with a 50% deposit to start, with the remainder due upon completion. For larger projects, we can arrange milestone-based payments.' },
-            { q: 'Do you offer ongoing support?', a: 'Yes! All projects include initial support. We also offer monthly maintenance packages starting at $500/month for long-term partnerships.' },
-            { q: 'How long does a typical project take?', a: 'Timeline varies based on scope. A simple website might take 2-4 weeks, while a complex application could be 3-6 months. We provide accurate estimates during our discovery phase.' },
-            { q: 'What if my project doesn\'t fit these packages?', a: 'These packages are starting points. We customize every quote based on your specific needs. Reach out and we\'ll create a tailored proposal.' },
-          ].map((faq) => (
-            <div class="p-6 rounded-xl" style="background-color: var(--card-bg); box-shadow: var(--card-shadow);">
-              <h3 class="text-lg font-bold mb-2" style="color: var(--text-primary);">{faq.q}</h3>
-              <p style="color: var(--text-secondary);">{faq.a}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- CTA Section -->
   <section class="py-20 relative overflow-hidden">
     <div class="absolute inset-0 gradient-bg"></div>
