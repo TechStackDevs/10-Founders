@@ -207,6 +207,30 @@ const developers = [
     </div>
   </section>
 
+  <!-- Technologies Section -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4" style="color: var(--text-primary);">
+            Technologies We Use
+          </h2>
+          <p class="text-xl max-w-2xl mx-auto" style="color: var(--text-secondary);">
+            Modern tools and frameworks our team works with to build robust, scalable solutions
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {['React', 'Next.js', 'Node.js', 'TypeScript', 'Python', 'PostgreSQL', 'Tailwind', 'Docker', 'Clerk', 'Supabase', 'Astro', 'AWS', 'Javascript', 'Capacitor', 'Swift', 'React Native', 'Prisma', 'Vercel', 'MongoDB', 'Stripe', 'Vite', 'Bun', 'Tauri', 'Nx'].map((tech) => (
+            <div class="p-6 rounded-xl text-center transition-all duration-300 hover:-translate-y-1" style="background-color: var(--card-bg); box-shadow: var(--card-shadow);">
+              <span class="font-semibold" style="color: var(--text-primary);">{tech}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Join Us CTA -->
   <section class="py-20 relative overflow-hidden">
     <div class="absolute inset-0 gradient-bg"></div>
