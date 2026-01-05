@@ -1,6 +1,58 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+// Example project concepts - showcasing what we can build
+const conceptProjects = [
+  {
+    title: 'FinFlow Dashboard',
+    category: 'Web Application',
+    description: 'A comprehensive financial analytics platform for tracking investments, expenses, and portfolio performance in real-time.',
+    tags: ['React', 'Node.js', 'PostgreSQL', 'Chart.js'],
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+    color: 'from-blue-600 to-cyan-500',
+  },
+  {
+    title: 'MealMate',
+    category: 'Mobile App',
+    description: 'AI-powered meal planning and grocery shopping app that helps users eat healthier while reducing food waste.',
+    tags: ['React Native', 'Firebase', 'OpenAI', 'Stripe'],
+    image: 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&h=600&fit=crop',
+    color: 'from-emerald-500 to-teal-600',
+  },
+  {
+    title: 'Artisan Collective',
+    category: 'E-Commerce',
+    description: 'A boutique marketplace connecting local artisans with customers seeking unique, handcrafted goods.',
+    tags: ['Next.js', 'Shopify API', 'Tailwind', 'Algolia'],
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
+    color: 'from-amber-500 to-orange-600',
+  },
+  {
+    title: 'CloudSync Pro',
+    category: 'SaaS Platform',
+    description: 'Enterprise file synchronization and collaboration tool with advanced security features and team management.',
+    tags: ['Vue.js', 'Go', 'AWS', 'Redis'],
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop',
+    color: 'from-violet-600 to-purple-600',
+  },
+  {
+    title: 'GreenPath Logistics',
+    category: 'Web Application',
+    description: 'Carbon-neutral delivery route optimization system helping logistics companies reduce their environmental impact.',
+    tags: ['React', 'Python', 'TensorFlow', 'Maps API'],
+    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=600&fit=crop',
+    color: 'from-green-500 to-emerald-600',
+  },
+  {
+    title: 'EventHorizon',
+    category: 'Mobile App',
+    description: 'Virtual and hybrid event management platform with interactive features for attendee engagement.',
+    tags: ['Flutter', 'Node.js', 'WebRTC', 'Socket.io'],
+    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop',
+    color: 'from-pink-500 to-rose-600',
+  },
+];
+
 const offerings = [
   {
     title: 'Custom Web Applications',
@@ -152,6 +204,75 @@ const offerings = [
     </div>
   </section>
 
+  <!-- What We Can Build Section -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">
+            What We Can Build
+          </h2>
+          <p class="text-lg max-w-2xl mx-auto" style="color: var(--text-secondary);">
+            Example project concepts showcasing the types of applications we can create for you
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {conceptProjects.map((project, index) => (
+            <a
+              href="/contact"
+              class="group rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 block"
+              style={`background-color: var(--card-bg); box-shadow: var(--card-shadow); animation: fadeInUp 0.6s ease-out ${index * 0.1}s backwards;`}
+            >
+              <!-- Project Image -->
+              <div class="relative h-56 overflow-hidden">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div class={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-0 group-hover:opacity-70 transition-opacity duration-300`}></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span class="px-6 py-3 bg-white text-gray-900 rounded-full font-semibold text-sm shadow-lg">
+                    Let's Build This
+                  </span>
+                </div>
+                <!-- Category Badge -->
+                <div class="absolute top-4 left-4">
+                  <span class={`px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${project.color} text-white`}>
+                    {project.category}
+                  </span>
+                </div>
+              </div>
+              
+              <!-- Project Info -->
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">
+                  {project.title}
+                </h3>
+                <p class="text-sm mb-4 line-clamp-2" style="color: var(--text-secondary);">
+                  {project.description}
+                </p>
+                <!-- Tags -->
+                <div class="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span 
+                      class="px-2 py-1 rounded-md text-xs font-medium"
+                      style="background-color: var(--bg-secondary); color: var(--text-muted);"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Process Section -->
   <section class="py-20">
     <div class="container mx-auto px-4">
@@ -176,30 +297,6 @@ const offerings = [
               <div class="text-6xl font-bold gradient-text mb-4">{item.step}</div>
               <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">{item.title}</h3>
               <p style="color: var(--text-secondary);">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Technologies Section -->
-  <section class="py-20" style="background-color: var(--bg-secondary);">
-    <div class="container mx-auto px-4">
-      <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-4" style="color: var(--text-primary);">
-            Technologies We Use
-          </h2>
-          <p class="text-xl max-w-2xl mx-auto" style="color: var(--text-secondary);">
-            Modern tools and frameworks to build robust, scalable solutions
-          </p>
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {['React', 'Next.js', 'Node.js', 'TypeScript', 'Python', 'PostgreSQL', 'Tailwind', 'Docker', 'Clerk', 'Supabase', 'Astro', 'AWS', 'Javascript', 'Capacitor', 'Swift', 'React Native', 'Prisma', 'Vercel', 'MongoDB', 'Stripe', 'Vite', 'Bun', 'Tauri', 'Nx'].map((tech) => (
-            <div class="p-6 rounded-xl text-center transition-all duration-300 hover:-translate-y-1" style="background-color: var(--card-bg); box-shadow: var(--card-shadow);">
-              <span class="font-semibold" style="color: var(--text-primary);">{tech}</span>
             </div>
           ))}
         </div>
