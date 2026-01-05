@@ -3,23 +3,23 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  /* Teals (matching logo) */
-  --color-primary-50: #f0fdfa;
-  --color-primary-100: #ccfbf1;
-  --color-primary-200: #99f6e4;
-  --color-primary-300: #6ee0b5;
-  --color-primary-400: #4dbdac;
-  --color-primary-500: #2a8a8c;
-  --color-primary-600: #238080;
-  --color-primary-700: #1e4263;
-  --color-primary-800: #1a3a55;
-  --color-primary-900: #153045;
-  --color-primary-950: #0f2030;
+  /* Blues/Teals (matching new gradient) */
+  --color-primary-50: #e6f7f5;
+  --color-primary-100: #ccefeb;
+  --color-primary-200: #99dfd7;
+  --color-primary-300: #0ac694;
+  --color-primary-400: #0bb7a0;
+  --color-primary-500: #219cb5;
+  --color-primary-600: #1a7d91;
+  --color-primary-700: #143b78;
+  --color-primary-800: #102e5f;
+  --color-primary-900: #0c2246;
+  --color-primary-950: #08162d;
 
-  /* Accent - navy from logo */
-  --color-accent-400: #4dbdac;
-  --color-accent-500: #2a8a8c;
-  --color-accent-600: #1e4263;
+  /* Accent - from gradient */
+  --color-accent-400: #0bb7a0;
+  --color-accent-500: #219cb5;
+  --color-accent-600: #143b78;
 }
 
 /* Light mode (default) */
@@ -100,10 +100,10 @@ body {
 
 /* Color Theme: Logo (default) */
 :root {
-  --gradient-1: #1e4263;
-  --gradient-2: #2a8a8c;
-  --gradient-3: #4dbdac;
-  --gradient-4: #6ee0b5;
+  --gradient-1: #143b78;
+  --gradient-2: #219cb5;
+  --gradient-3: #0bb7a0;
+  --gradient-4: #0ac694;
 }
 
 /* Color Theme: Blue Purple Pink */
