@@ -100,10 +100,10 @@ body {
 
 /* Color Theme: Logo (default) */
 :root {
-  --gradient-1: #144ba4;
-  --gradient-2: #1f9eb7;
-  --gradient-3: #10ab96;
-  --gradient-4: #16c496;
+  --gradient-1: #0e3779;
+  --gradient-2: #0db1d2;
+  --gradient-3: #13c4a9;
+  --gradient-4: #11d88f;
 }
 
 /* Color Theme: Blue Purple Pink */
