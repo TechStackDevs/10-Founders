@@ -66,19 +66,19 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Who We Are Section -->
-  <section class="py-20">
+  <section class="who-we-are py-20">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6" style="color: var(--text-primary);">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 wwa-heading" style="color: var(--text-primary);">
           Who We Are
         </h2>
-        <p class="text-sm font-semibold uppercase tracking-wide mb-4 text-primary-500 dark:text-primary-400">
+        <p class="text-sm font-semibold uppercase tracking-wide mb-4 wwa-subtitle text-primary-500 dark:text-primary-400">
           A developer collective, not an agency
         </p>
-        <p class="text-xl md:text-2xl leading-relaxed mb-6" style="color: var(--text-secondary);">
+        <p class="text-xl md:text-2xl leading-relaxed mb-6 wwa-text" style="color: var(--text-secondary);">
           Tech Stack Devs is a collective studio of independent senior developers. Every project is owned by a senior developer who leads the build and manages the client relationship directly — a builder first, not a non-technical manager. When a project needs more firepower, the project owner brings in other senior developers from the collective to collaborate.
         </p>
-        <p class="text-lg leading-relaxed" style="color: var(--text-secondary);">
+        <p class="text-lg leading-relaxed wwa-text" style="color: var(--text-secondary);">
           Your point of contact is always someone who's in the code. No account managers, no non-technical middlemen, and no inflated agency pricing — just senior-level talent, direct communication, and real accountability.
         </p>
       </div>
@@ -100,79 +100,55 @@ import Layout from '../layouts/Layout.astro';
         
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Web Apps -->
-          <div class="p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--card-bg); box-shadow: var(--card-shadow);">
-            <div class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center mb-6">
-              <svg class="w-7 h-7 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-            </div>
-            <h3 class="text-2xl font-bold mb-3" style="color: var(--text-primary);">Web Applications</h3>
-            <p style="color: var(--text-secondary);">
+          <div class="gradient-card p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--card-bg); box-shadow: var(--card-shadow);">
+            <div class="text-3xl mb-6">⚙️</div>
+            <h3 class="text-2xl font-bold mb-3 gc-heading" style="color: var(--text-primary);">Web Applications</h3>
+            <p class="gc-text" style="color: var(--text-secondary);">
               Powerful web apps built with modern frameworks. Fast, scalable, and beautiful.
             </p>
           </div>
 
           <!-- Mobile Apps -->
-          <div class="p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--card-bg); box-shadow: var(--card-shadow);">
-            <div class="w-14 h-14 rounded-xl bg-accent-500/10 flex items-center justify-center mb-6">
-              <svg class="w-7 h-7 text-accent-600 dark:text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-              </svg>
-            </div>
-            <h3 class="text-2xl font-bold mb-3" style="color: var(--text-primary);">Mobile Apps</h3>
-            <p style="color: var(--text-secondary);">
+          <div class="gradient-card p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--card-bg); box-shadow: var(--card-shadow);">
+            <div class="text-3xl mb-6">📱</div>
+            <h3 class="text-2xl font-bold mb-3 gc-heading" style="color: var(--text-primary);">Mobile Apps</h3>
+            <p class="gc-text" style="color: var(--text-secondary);">
               iOS and Android apps that users love. Native performance, cross-platform efficiency.
             </p>
           </div>
 
           <!-- Websites -->
-          <div class="p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--card-bg); box-shadow: var(--card-shadow);">
-            <div class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center mb-6">
-              <svg class="w-7 h-7 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-              </svg>
-            </div>
-            <h3 class="text-2xl font-bold mb-3" style="color: var(--text-primary);">Company Websites</h3>
-            <p style="color: var(--text-secondary);">
+          <div class="gradient-card p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--card-bg); box-shadow: var(--card-shadow);">
+            <div class="text-3xl mb-6">🌐</div>
+            <h3 class="text-2xl font-bold mb-3 gc-heading" style="color: var(--text-primary);">Company Websites</h3>
+            <p class="gc-text" style="color: var(--text-secondary);">
               Stunning websites optimized for conversions. SEO-ready and lightning fast.
             </p>
           </div>
 
           <!-- SaaS -->
-          <div class="p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--card-bg); box-shadow: var(--card-shadow);">
-            <div class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center mb-6">
-              <svg class="w-7 h-7 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
-            <h3 class="text-2xl font-bold mb-3" style="color: var(--text-primary);">SaaS Platforms</h3>
-            <p style="color: var(--text-secondary);">
+          <div class="gradient-card p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--card-bg); box-shadow: var(--card-shadow);">
+            <div class="text-3xl mb-6">🚀</div>
+            <h3 class="text-2xl font-bold mb-3 gc-heading" style="color: var(--text-primary);">SaaS Platforms</h3>
+            <p class="gc-text" style="color: var(--text-secondary);">
               Full-featured software-as-a-service products with subscriptions, multi-tenancy, and billing systems.
             </p>
           </div>
 
           <!-- E-Commerce -->
-          <div class="p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--card-bg); box-shadow: var(--card-shadow);">
-            <div class="w-14 h-14 rounded-xl bg-accent-500/10 flex items-center justify-center mb-6">
-              <svg class="w-7 h-7 text-accent-600 dark:text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-              </svg>
-            </div>
-            <h3 class="text-2xl font-bold mb-3" style="color: var(--text-primary);">E-Commerce</h3>
-            <p style="color: var(--text-secondary);">
+          <div class="gradient-card p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--card-bg); box-shadow: var(--card-shadow);">
+            <div class="text-3xl mb-6">🛒</div>
+            <h3 class="text-2xl font-bold mb-3 gc-heading" style="color: var(--text-primary);">E-Commerce</h3>
+            <p class="gc-text" style="color: var(--text-secondary);">
               Online stores and marketplaces that drive sales. Custom or platform-based solutions tailored to your needs.
             </p>
           </div>
 
           <!-- AI & Automation -->
-          <div class="p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--card-bg); box-shadow: var(--card-shadow);">
-            <div class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center mb-6">
-              <svg class="w-7 h-7 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-              </svg>
-            </div>
-            <h3 class="text-2xl font-bold mb-3" style="color: var(--text-primary);">AI & Automation</h3>
-            <p style="color: var(--text-secondary);">
+          <div class="gradient-card p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--card-bg); box-shadow: var(--card-shadow);">
+            <div class="text-3xl mb-6">🧠</div>
+            <h3 class="text-2xl font-bold mb-3 gc-heading" style="color: var(--text-primary);">AI & Automation</h3>
+            <p class="gc-text" style="color: var(--text-secondary);">
               Integrate AI capabilities and automate workflows to unlock new efficiencies and intelligent systems.
             </p>
           </div>

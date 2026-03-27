@@ -323,20 +323,20 @@ const addonCategories = [
           {packageAnchors.map((anchor) => (
             <a 
               href={`#${anchor.sectionId}`}
-              class="p-6 rounded-2xl block transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer group" 
+              class="gradient-card p-6 rounded-2xl block transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer group" 
               style="background-color: var(--card-bg); box-shadow: var(--card-shadow);"
             >
               <div class="text-3xl mb-3">{anchor.icon}</div>
-              <h3 class="text-xl font-bold mb-4 group-hover:text-primary-500 transition-colors" style="color: var(--text-primary);">{anchor.category}</h3>
+              <h3 class="text-xl font-bold mb-4 gc-heading group-hover:text-primary-500 transition-colors" style="color: var(--text-primary);">{anchor.category}</h3>
               <ul class="space-y-3">
                 {anchor.items.map((item) => (
                   <li>
-                    <span class="text-sm block" style="color: var(--text-secondary);">{item.name}</span>
-                    <span class="text-sm font-semibold text-primary-500">{item.price}</span>
+                    <span class="text-sm block gc-text" style="color: var(--text-secondary);">{item.name}</span>
+                    <span class="text-sm font-semibold gc-price text-primary-500">{item.price}</span>
                   </li>
                 ))}
               </ul>
-              <div class="mt-4 text-sm font-medium text-primary-500 group-hover:text-primary-600 transition-colors">
+              <div class="mt-4 text-sm font-medium gc-link-text text-primary-500 group-hover:text-primary-600 transition-colors">
                 View packages →
               </div>
             </a>
@@ -664,12 +664,12 @@ const addonCategories = [
               </h3>
               <div class="space-y-3">
                 {category.addons.map((addon) => (
-                  <div class="p-4 rounded-xl border transition-all duration-300 hover:border-primary-300 dark:hover:border-primary-600" style="background-color: var(--card-bg); border-color: var(--border-color);">
+                  <div class="gradient-card p-4 rounded-xl border transition-all duration-300 hover:border-primary-300 dark:hover:border-primary-600" style="background-color: var(--card-bg); border-color: var(--border-color);">
                     <div class="flex justify-between items-start mb-2">
-                      <h4 class="font-semibold" style="color: var(--text-primary);">{addon.name}</h4>
-                      <span class="text-sm font-bold text-primary-500 whitespace-nowrap ml-2">{addon.price}</span>
+                      <h4 class="font-semibold gc-heading" style="color: var(--text-primary);">{addon.name}</h4>
+                      <span class="text-sm font-bold gc-price text-primary-500 whitespace-nowrap ml-2">{addon.price}</span>
                     </div>
-                    <p class="text-sm" style="color: var(--text-secondary);">{addon.description}</p>
+                    <p class="text-sm gc-text" style="color: var(--text-secondary);">{addon.description}</p>
                   </div>
                 ))}
               </div>

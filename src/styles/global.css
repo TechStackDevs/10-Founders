@@ -160,3 +160,69 @@ html:not(.dark)[data-color-theme="blue-purple-pink"] .footer-logo-link {
     padding-top: 2.5rem !important;
   }
 }
+
+/* Gradient cards — gradient bg + white text/icons in light mode (both themes) */
+html:not(.dark) .gradient-card {
+  background: linear-gradient(135deg, var(--gradient-1) 0%, var(--gradient-2) 40%, var(--gradient-3) 70%, var(--gradient-4) 100%) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+html:not(.dark) .gradient-card .gc-heading {
+  color: #ffffff !important;
+}
+html:not(.dark) .gradient-card .gc-text {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+html:not(.dark) .gradient-card .gc-icon-box {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+html:not(.dark) .gradient-card .gc-icon {
+  color: #ffffff !important;
+}
+html:not(.dark) .gradient-card .gc-role {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+html:not(.dark) .gradient-card .gc-link {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+}
+html:not(.dark) .gradient-card .gc-link:hover {
+  background-color: rgba(255, 255, 255, 0.35) !important;
+}
+html:not(.dark) .gradient-card .gc-price {
+  color: #ffffff !important;
+}
+html:not(.dark) .gradient-card .gc-link-text {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+html:not(.dark) .gradient-card.group:hover .gc-heading {
+  color: #ffffff !important;
+}
+html:not(.dark) .gradient-card[style*="border-color"] {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+html:not(.dark) .gradient-card[style*="border-color"]:hover {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Who We Are section — full gradient bg + white text in light mode */
+html:not(.dark) .who-we-are {
+  background: linear-gradient(135deg, var(--gradient-1) 0%, var(--gradient-2) 40%, var(--gradient-3) 70%, var(--gradient-4) 100%) !important;
+}
+html:not(.dark) .who-we-are .wwa-heading {
+  color: #ffffff !important;
+}
+html:not(.dark) .who-we-are .wwa-subtitle {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+html:not(.dark) .who-we-are .wwa-text {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Tech stack chips — gradient bg + white text in light mode (both themes) */
+html:not(.dark) .tech-chip {
+  background: linear-gradient(135deg, var(--gradient-1) 0%, var(--gradient-2) 40%, var(--gradient-3) 70%, var(--gradient-4) 100%) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+}
+html:not(.dark) .tech-chip .tech-chip-text {
+  color: #ffffff !important;
+}

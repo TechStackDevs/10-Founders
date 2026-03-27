@@ -191,7 +191,7 @@ const developers = [
       <div class="max-w-6xl mx-auto">
         <div class="grid md:grid-cols-2 gap-8">
           {developers.map((dev, index) => (
-            <div class="p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--card-bg); box-shadow: var(--card-shadow);">
+            <div class="gradient-card p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1" style="background-color: var(--card-bg); box-shadow: var(--card-shadow);">
               <div class="flex flex-col sm:flex-row items-start gap-6">
                 <!-- Photo placeholder -->
                 <div class="w-28 h-28 rounded-2xl overflow-hidden flex-shrink-0 border-2 border-primary-200 dark:border-primary-800">
@@ -204,16 +204,16 @@ const developers = [
                   )}
                 </div>
                 <div class="flex-1">
-                  <h3 class="text-2xl font-bold mb-1" style="color: var(--text-primary);">{dev.name}</h3>
-                  <p class="text-primary-500 font-medium mb-3">{dev.role}</p>
-                  <p class="mb-4" style="color: var(--text-secondary);">{dev.bio}</p>
+                  <h3 class="text-2xl font-bold mb-1 gc-heading" style="color: var(--text-primary);">{dev.name}</h3>
+                  <p class="gc-role text-primary-500 font-medium mb-3">{dev.role}</p>
+                  <p class="mb-4 gc-text" style="color: var(--text-secondary);">{dev.bio}</p>
                   <div class="flex flex-wrap gap-2">
                     {dev.links.filter(link => link.url).map((link) => (
                       <a 
                         href={link.url} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        class="px-3 py-1 text-sm rounded-full bg-primary-100 text-primary-700 dark:bg-primary-600/50 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-800/50 transition-colors"
+                        class="gc-link px-3 py-1 text-sm rounded-full bg-primary-100 text-primary-700 dark:bg-primary-600/50 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-800/50 transition-colors"
                       >
                         {link.title} →
                       </a>
@@ -243,8 +243,8 @@ const developers = [
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
           {['React', 'Next.js', 'Node.js', 'TypeScript', 'Python', 'PostgreSQL', 'Tailwind', 'Docker', 'Clerk', 'Supabase', 'Astro', 'AWS', 'Javascript', 'Capacitor', 'Swift', 'React Native', 'Prisma', 'Vercel', 'MongoDB', 'Stripe', 'Vite', 'Bun', 'Tauri', 'Nx', 'Neon', 'Flutter', 'Vue.js', 'Firebase', 'TensorFlow','MS Powershell', 'C#', 'BASH'].map((tech) => (
-            <div class="p-6 rounded-xl text-center transition-all duration-300 hover:-translate-y-1" style="background-color: var(--card-bg); box-shadow: var(--card-shadow);">
-              <span class="font-semibold" style="color: var(--text-primary);">{tech}</span>
+            <div class="tech-chip p-6 rounded-xl text-center transition-all duration-300 hover:-translate-y-1" style="background-color: var(--card-bg); box-shadow: var(--card-shadow);">
+              <span class="tech-chip-text font-semibold" style="color: var(--text-primary);">{tech}</span>
             </div>
           ))}
         </div>
