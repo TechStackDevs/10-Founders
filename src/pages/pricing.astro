@@ -68,10 +68,10 @@ const packageAnchors = [
     icon: '📈',
     sectionId: 'addons-growth',
     items: [
-      { name: 'SEO Setup (Basic)', price: '$500 – $1,000' },
-      { name: 'SEO Advanced', price: '$1,500 – $2,500' },
-      { name: 'Social Media Setup', price: '$500 – $800' },
-      { name: 'Content Strategy Session', price: '$500' },
+      { name: 'SEO Setup (One-Time)', price: '$500' },
+      { name: 'Monthly SEO', price: '$500/mo' },
+      { name: 'Social Media Setup', price: '$500' },
+      { name: 'Monthly Posting', price: '$500/mo + $100/mo per extra acct' },
     ],
   },
   {
@@ -79,10 +79,10 @@ const packageAnchors = [
     icon: '🔧',
     sectionId: 'addons-maintenance',
     items: [
-      { name: 'Monthly Maintenance', price: '$500 – $1,500/mo' },
+      { name: 'Monthly Maintenance', price: '$500 – $1,000/mo' },
       { name: 'Monthly AI Support', price: '$500 – $2,000/mo' },
       { name: '1-Hour Training Session', price: '$150' },
-      { name: '5-Session Training Pack', price: '$700' },
+      { name: '5-Session Training Pack', price: '$500' },
     ],
   },
 ];
@@ -260,10 +260,10 @@ const addonCategories = [
     icon: '📈',
     sectionId: 'addons-growth',
     addons: [
-      { name: 'SEO Setup (Basic)', price: '$500 – $1,000', description: 'Keyword research, optimization, analytics setup' },
-      { name: 'SEO Advanced', price: '$1,500 – $2,500', description: 'Technical audits, content strategy, and optimization' },
-      { name: 'Social Media Setup', price: '$500 – $800', description: 'Setup and branding for 3 platforms' },
-      { name: 'Content Strategy Session', price: '$500', description: 'Strategic planning for your content marketing' },
+      { name: 'SEO Setup (One-Time)', price: '$500', description: 'Keyword research, optimization, analytics setup' },
+      { name: 'Monthly SEO', price: '$500/mo', description: 'Ongoing optimization, technical audits, content updates, and performance reporting' },
+      { name: 'Social Media Setup', price: '$500', description: 'Setup and branding for up to 3 platforms' },
+      { name: 'Monthly Social Media Posting', price: '$500/mo', description: 'Content creation, scheduling, and reporting for one account. +$100/mo for each additional account.' },
     ],
   },
   {
@@ -283,8 +283,8 @@ const addonCategories = [
     sectionId: 'addons-maintenance',
     addons: [
       { name: '1-Hour Training Session', price: '$150', description: 'One-on-one training for your team' },
-      { name: '5-Session Training Pack', price: '$700', description: 'Comprehensive training program' },
-      { name: 'Monthly Maintenance', price: '$500 – $1,500/mo', description: 'Updates, bug fixes, and support' },
+      { name: '5-Session Training Pack', price: '$500', description: 'Comprehensive training program' },
+      { name: 'Monthly Maintenance', price: '$500 – $1,000/mo', description: 'Updates, bug fixes, and support' },
       { name: 'Monthly AI Support', price: '$500 – $2,000/mo', description: 'Ongoing AI maintenance and improvements' },
     ],
   },
@@ -330,9 +330,9 @@ const addonCategories = [
               <h3 class="text-xl font-bold mb-4 group-hover:text-primary-500 transition-colors" style="color: var(--text-primary);">{anchor.category}</h3>
               <ul class="space-y-3">
                 {anchor.items.map((item) => (
-                  <li class="flex justify-between items-start gap-2">
-                    <span class="text-sm" style="color: var(--text-secondary);">{item.name}</span>
-                    <span class="text-sm font-semibold whitespace-nowrap text-primary-500">{item.price}</span>
+                  <li>
+                    <span class="text-sm block" style="color: var(--text-secondary);">{item.name}</span>
+                    <span class="text-sm font-semibold text-primary-500">{item.price}</span>
                   </li>
                 ))}
               </ul>
