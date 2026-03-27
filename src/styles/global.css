@@ -137,3 +137,26 @@ body {
   --color-accent-500: #d946ef;
   --color-accent-600: #c026d3;
 }
+
+/* Swap logo in light mode when blue-purple-pink theme is active */
+[data-color-theme="blue-purple-pink"]:not(.dark) .logo-default {
+  display: none !important;
+}
+[data-color-theme="blue-purple-pink"]:not(.dark) .logo-pink {
+  display: block !important;
+  transform: translate(-10px, 5px);
+}
+
+/* Footer spacing — only light mode + blue-purple-pink theme (use !important so these beat Tailwind utilities) */
+html:not(.dark)[data-color-theme="blue-purple-pink"] .footer-inner {
+  padding-top: 1.5rem !important;
+  padding-bottom: 2.5rem !important;
+}
+html:not(.dark)[data-color-theme="blue-purple-pink"] .footer-logo-link {
+  margin-bottom: 0.5rem !important;
+}
+@media (min-width: 768px) {
+  html:not(.dark)[data-color-theme="blue-purple-pink"] .footer-nav-col {
+    padding-top: 2.5rem !important;
+  }
+}

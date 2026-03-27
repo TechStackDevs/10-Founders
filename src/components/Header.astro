@@ -17,9 +17,10 @@ const currentPath = rawPath === '/' ? '/' : rawPath.replace(/\/$/, '');
   <nav class="container mx-auto px-4">
     <div class="flex items-center justify-between h-24">
       <!-- Logo - fixed width container to prevent layout shift -->
-      <a href="/" class="flex items-center justify-start group w-48">
-        <img src="/images/logo-no-bg.png" alt="Tech Stack Devs" class="h-14 w-auto block dark:hidden" />
-        <img src="/images/logo-transparent.png.webp" alt="Tech Stack Devs" class="h-24 w-auto hidden dark:block" />
+      <a href="/" class="flex items-center justify-start group w-48 h-16 overflow-hidden">
+        <img src="/images/logo-no-bg.png" alt="Tech Stack Devs" class="h-14 w-auto object-contain logo-default block dark:hidden" />
+        <img src="/images/logo-pink-purple.png" alt="Tech Stack Devs" class="h-31 w-auto object-contain logo-pink hidden" />
+        <img src="/images/logo-transparent.png.webp" alt="Tech Stack Devs" class="h-24 w-auto object-contain hidden dark:block" />
       </a>
 
       <!-- Desktop Navigation -->
