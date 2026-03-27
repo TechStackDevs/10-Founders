@@ -63,6 +63,28 @@ const packageAnchors = [
       { name: 'Custom AI Systems', price: 'Custom Quote' },
     ],
   },
+  {
+    category: 'SEO, Social & Content',
+    icon: '📈',
+    sectionId: 'addons-growth',
+    items: [
+      { name: 'SEO Setup (Basic)', price: '$500 – $1,000' },
+      { name: 'SEO Advanced', price: '$1,500 – $2,500' },
+      { name: 'Social Media Setup', price: '$500 – $800' },
+      { name: 'Content Strategy Session', price: '$500' },
+    ],
+  },
+  {
+    category: 'Maintenance & Support',
+    icon: '🔧',
+    sectionId: 'addons-maintenance',
+    items: [
+      { name: 'Monthly Maintenance', price: '$500 – $1,500/mo' },
+      { name: 'Monthly AI Support', price: '$500 – $2,000/mo' },
+      { name: '1-Hour Training Session', price: '$150' },
+      { name: '5-Session Training Pack', price: '$700' },
+    ],
+  },
 ];
 
 // Website Packages
@@ -236,6 +258,7 @@ const addonCategories = [
   {
     title: 'Growth & Marketing',
     icon: '📈',
+    sectionId: 'addons-growth',
     addons: [
       { name: 'SEO Setup (Basic)', price: '$500 – $1,000', description: 'Keyword research, optimization, analytics setup' },
       { name: 'SEO Advanced', price: '$1,500 – $2,500', description: 'Technical audits, content strategy, and optimization' },
@@ -246,6 +269,7 @@ const addonCategories = [
   {
     title: 'Tech & AI Integrations',
     icon: '🔌',
+    sectionId: 'addons-tech',
     addons: [
       { name: 'API Integration', price: '$1,000 – $2,000', hours: '10–20 hours', description: 'Connect to third-party services and APIs' },
       { name: 'AI Integration', price: '$1,500 – $3,000', hours: '15–30 hours', description: 'Add AI capabilities to existing projects' },
@@ -256,6 +280,7 @@ const addonCategories = [
   {
     title: 'Training & Maintenance',
     icon: '🎓',
+    sectionId: 'addons-maintenance',
     addons: [
       { name: '1-Hour Training Session', price: '$150', description: 'One-on-one training for your team' },
       { name: '5-Session Training Pack', price: '$700', description: 'Comprehensive training program' },
@@ -290,8 +315,11 @@ const addonCategories = [
           <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--text-primary);">
             Quick Overview
           </h2>
+          <p class="text-sm max-w-2xl mx-auto" style="color: var(--text-muted);">
+            Ongoing social media subscription packages are in the works — pricing will reflect our tools and partner subscriptions.
+          </p>
         </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {packageAnchors.map((anchor) => (
             <a 
               href={`#${anchor.sectionId}`}
@@ -616,7 +644,7 @@ const addonCategories = [
   </section>
 
   <!-- Add-ons Section -->
-  <section class="py-16">
+  <section id="addons" class="py-16 scroll-mt-28">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-12">
@@ -630,7 +658,7 @@ const addonCategories = [
 
         <div class="grid md:grid-cols-3 gap-8">
           {addonCategories.map((category) => (
-            <div class="space-y-4">
+            <div class="space-y-4 scroll-mt-28" id={category.sectionId}>
               <h3 class="text-xl font-bold flex items-center gap-2" style="color: var(--text-primary);">
                 <span>{category.icon}</span> {category.title}
               </h3>

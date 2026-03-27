@@ -88,14 +88,14 @@ const offerings = [
     ],
   },
   {
-    title: 'AI Implementation & Automation',
-    description: 'Integrate AI capabilities into your workflows. Automate repetitive tasks and unlock new efficiencies with intelligent systems.',
+    title: 'SaaS Platforms',
+    description: 'Full-featured software-as-a-service products built from scratch. We handle subscriptions, multi-tenancy, billing, and everything needed to launch and scale your platform.',
     features: [
-      'Custom AI integrations',
-      'Workflow automation',
-      'Chatbot development',
-      'Document processing',
-      'Predictive analytics',
+      'Stripe subscription billing',
+      'Multi-tenancy & user management',
+      'Role-based access control',
+      'Admin dashboards & analytics',
+      'Production deployment & scaling',
     ],
   },
   {
@@ -107,6 +107,28 @@ const offerings = [
       'Payment integration',
       'Inventory management',
       'Order fulfillment systems',
+    ],
+  },
+  {
+    title: 'AI Implementation & Automation',
+    description: 'Integrate AI capabilities into your workflows. Automate repetitive tasks and unlock new efficiencies with intelligent systems.',
+    features: [
+      'Custom AI integrations',
+      'Workflow automation',
+      'Chatbot development',
+      'Document processing',
+      'Predictive analytics',
+    ],
+  },
+  {
+    title: 'Social Media Management',
+    description: 'Let us handle your business\'s social media presence. We create and schedule posts that keep your audience engaged and your brand consistent — so you can focus on running your business.',
+    features: [
+      'Content creation & scheduling',
+      'Platform management (Facebook, Instagram, LinkedIn, etc.)',
+      'Brand-consistent messaging',
+      'Performance reporting',
+      'Pricing coming soon',
     ],
   },
   {
@@ -144,22 +166,22 @@ const offerings = [
   <section class="py-20" style="background-color: var(--bg-secondary);">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {offerings.map((offering) => (
-            <div class="p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1 gradient-bg text-white">
-              <h3 class="text-2xl font-bold mb-4 text-white">
+            <div class="p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1 gradient-bg text-white">
+              <h3 class="text-xl font-bold mb-3 text-white">
                 {offering.title}
               </h3>
-              <p class="mb-6 text-blue-100">
+              <p class="mb-4 text-blue-100 text-sm">
                 {offering.description}
               </p>
-              <ul class="space-y-2">
+              <ul class="space-y-1.5">
                 {offering.features.map((feature) => (
                   <li class="flex items-start gap-2">
-                    <svg class="w-5 h-5 mt-0.5 flex-shrink-0 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-4 h-4 mt-0.5 flex-shrink-0 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                     </svg>
-                    <span class="text-blue-50">
+                    <span class="text-blue-50 text-sm">
                       {feature}
                     </span>
                   </li>
