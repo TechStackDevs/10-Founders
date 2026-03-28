@@ -146,7 +146,7 @@ const offerings = [
 ];
 ---
 
-<Layout title="Our Offerings - Tech Stack Devs">
+<Layout title="Our Offerings - Tech Stack Devs" description="Web apps, mobile apps, SaaS platforms, e-commerce, AI integration, social media management, and more. See what Tech Stack Devs can build for your business.">
   <!-- Hero Section -->
   <section class="py-20 relative overflow-hidden">
     <div class="absolute inset-0 gradient-bg-subtle opacity-5 dark:opacity-10"></div>
@@ -221,6 +221,10 @@ const offerings = [
                   src={project.image} 
                   alt={project.title}
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div class={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-0 group-hover:opacity-70 transition-opacity duration-300`}></div>
                 <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">

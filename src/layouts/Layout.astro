@@ -6,9 +6,13 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
 }
 
-const { title, description = "Tech Stack Devs - Building apps and websites for your business" } = Astro.props;
+const { title, description = "Tech Stack Devs - A collective studio of independent senior developers building apps and websites for your business.", ogImage = "/images/logo-no-bg.png" } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(ogImage, Astro.site);
 ---
 
 <!doctype html>
@@ -18,11 +22,48 @@ const { title, description = "Tech Stack Devs - Building apps and websites for y
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL.href} />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL.href} />
+    <meta property="og:site_name" content="Tech Stack Devs" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL.href} />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <title>{title}</title>
+
+    <!-- Structured Data: LocalBusiness -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Tech Stack Devs",
+      "url": "https://techstackdevs.com",
+      "telephone": "+1-314-750-1526",
+      "email": "contact@techstackdevs.com",
+      "description": "A collective studio of independent senior developers building apps, websites, and SaaS platforms for businesses.",
+      "priceRange": "$$",
+      "areaServed": "US",
+      "serviceType": ["Web Development", "Mobile App Development", "SaaS Development", "AI Integration", "E-Commerce", "SEO", "Social Media Management"],
+      "sameAs": [
+        "https://linkedin.com/company/tech-stack-devs",
+        "https://www.facebook.com/profile.php?id=61585931731563",
+        "https://instagram.com/techstackdevs",
+        "https://tiktok.com/@techstackdevs",
+        "https://youtube.com/@techstackdevs"
+      ]
+    })} />
     <script is:inline>
       // Prevent flash/jump during initial theme load
       (function() {

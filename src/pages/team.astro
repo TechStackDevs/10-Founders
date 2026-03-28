@@ -169,7 +169,7 @@ const developers = [
 ];
 ---
 
-<Layout title="Our Team - Tech Stack Devs">
+<Layout title="Our Developers - Tech Stack Devs" description="Meet the independent senior developers behind Tech Stack Devs. Browse our collective and find the right developer for your project.">
   <!-- Hero Section -->
   <section class="py-20 relative overflow-hidden">
     <div class="absolute inset-0 gradient-bg-subtle opacity-5 dark:opacity-10"></div>
@@ -196,7 +196,7 @@ const developers = [
                 <!-- Photo placeholder -->
                 <div class="w-28 h-28 rounded-2xl overflow-hidden flex-shrink-0 border-2 border-primary-200 dark:border-primary-800">
                   {dev.image ? (
-                    <img src={dev.image} alt={dev.name} class="w-full h-full object-cover" />
+                    <img src={dev.image} alt={dev.name} class="w-full h-full object-cover" width="112" height="112" loading="lazy" decoding="async" />
                   ) : (
                     <div class="w-full h-full gradient-bg flex items-center justify-center">
                       <span class="text-white text-sm font-medium">Photo</span>
